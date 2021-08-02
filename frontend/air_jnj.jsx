@@ -7,7 +7,6 @@ import { login, signup } from './actions/session_actions';
 document.addEventListener("DOMContentLoaded", ()=>{
 
     const store = configureStore();
-    console.log(store);
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.signup = signup;
