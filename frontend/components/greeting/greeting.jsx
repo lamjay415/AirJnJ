@@ -8,26 +8,30 @@ class Greeting extends React.Component{
     }
 
     render(){
-
-        let greetings;
+   
         let { currentUser } = this.props;
-        if(currentUser){
-            greetings = (
-                <div className='greetings'>
-                    Welcome, {currentUser}
+        
+        const userGreeting = () => {
+
+                return (<div className='greetings'>
+                    Welcome, {currentUser.firstName.toUpperCase()}
                     <button onClick={this.props.logout}>Logout</button>
-                </div>
-            )
-        }else{
-            greetings = (
-                <div className='greetings'>
-                    <Link to='/signup'>Signup</Link>
-                    <Link to='/login'>Login</Link>
-                </div>
-            )
+                </div>)
+                
         }
 
-        return greetings;
+        const defaultGreeting = () => {
+
+                return (
+                    <div className='greetings'>
+                        <Link to='/signup'>Signup</Link>
+                        &nbsp;or&nbsp;
+                        <Link to='/login'>Login</Link>
+                    </div>
+                )
+        }
+
+        return currentUser ? userGreeting() : defaultGreeting();
     }
 
 }
