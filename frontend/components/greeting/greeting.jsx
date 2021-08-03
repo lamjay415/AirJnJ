@@ -8,9 +8,9 @@ class Greeting extends React.Component{
     }
 
     render(){
-   
+        // debugger
         let { currentUser } = this.props;
-        
+        console.log(currentUser);
         const userGreeting = () => {
 
                 return (<div className='greetings'>

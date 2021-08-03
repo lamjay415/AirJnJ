@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router';
 import Greeting from '../greeting/greeting';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component{
     
@@ -75,7 +76,7 @@ class SessionForm extends React.Component{
                         onChange={this.update('password')}
                         />
                     </div>
-                    <input type = "submit" value={this.props.formType}/>
+                        <input type = "submit" value={this.props.formType}/>
                 </form>
             </div>
         )
