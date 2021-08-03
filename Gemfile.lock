@@ -111,15 +111,9 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.0)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.1)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
-    nokogiri (1.12.1-x86_64-darwin)
-      racc (~> 1.4)
     nokogiri (1.12.1-x86_64-linux)
       racc (~> 1.4)
     pg (1.2.3)
@@ -209,9 +203,6 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  X86_64-linux
-  ruby
-  x86_64-darwin
   x86_64-linux
 
 DEPENDENCIES
@@ -243,4 +234,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   2.1.4
+   2.2.25
