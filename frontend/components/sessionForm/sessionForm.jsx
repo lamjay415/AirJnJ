@@ -35,48 +35,43 @@ class SessionForm extends React.Component{
         let form;
         if(formType === 'signup'){
             form = (
-                <div>
-                    <div className='form'>First Name: 
-                        <input type="text"
+                <div className='form-elements'>
+                    <div className='form'>First Name: </div>
+                    <input type="text"
                         value={this.state.first_name}
                         onChange={this.update('first_name')}
-                        />
-                    </div>
-                    <div className='form'>Last Name: 
-                        <input type="text"
+                    />
+                    <div className='form'>Last Name: </div>
+                    <input type="text"
                         value={this.state.last_name}
                         onChange={this.update('last_name')}
-                        />
-                    </div>
-                    <div className='form'>Birthdate: 
-                        <input type="date"
+                    />
+                    <div className='form'>Birthdate: </div>
+                    <input type="date"
                         value={this.state.birthdate}
                         onChange={this.update('birthdate')}
-                        />
-                    </div>
+                    />
                 </div>
             )
         }
 
 
         return (
-            <div>
+            <div className='user-form'>
                 <h1>{formType}</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <div className='form'>Email: 
-                        <input type="text"
+                <form onSubmit={this.handleSubmit} className='form-elements'>
+                    <div>Email:</div>
+                    <input type="text"
                         value={this.state.email}
                         onChange={this.update('email')}
-                        />
-                    </div>
+                    />
                     {form}
-                    <div className='form'>Password: 
-                        <input type="text"
+                    <div>Password: </div>
+                    <input type="text"
                         value={this.state.password}
                         onChange={this.update('password')}
-                        />
-                    </div>
-                        <input type = "submit" value={this.props.formType}/>
+                    />
+                    <input type = "submit" value={this.props.formType} className='form-button'/>
                 </form>
             </div>
         )

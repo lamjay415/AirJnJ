@@ -6,9 +6,15 @@ import SignupFormContainer from './sessionForm/signupFormContainer';
 
 const App = () => (
     <div>
-        <header>
-            <h1>AirJnJ</h1>
-            <GreetingContainer/>
+        <header className='header-container'>
+            <div>AirJnJ</div>
+            <div>Tabs</div>
+            <div className='user-container'>
+                <div className='host-link'>Become a host</div>
+                <div className='user-dropdown'>User
+                    <GreetingContainer/>
+                </div>
+            </div>
         </header>
         <AuthRoute path='/login' component={LoginFormContainer}/>
         <AuthRoute path='/signup' component={SignupFormContainer}/>

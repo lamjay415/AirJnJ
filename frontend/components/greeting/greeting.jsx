@@ -25,7 +25,6 @@ class Greeting extends React.Component{
                 return (
                     <div className='greetings'>
                         <Link to='/signup'>Signup</Link>
-                        &nbsp;or&nbsp;
                         <Link to='/login'>Login</Link>
                     </div>
                 )
