@@ -89,6 +89,7 @@ class SessionForm extends React.Component{
                     <div id='close-modal' onClick={this.props.closeModal}>x</div>
                     <div className='form-type'>{formType}</div>
                 </div>
+                <div className='welcome-header'>Welcome to AirJnJ</div>
                 {form}
             </div>
         )

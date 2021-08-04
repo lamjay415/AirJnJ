@@ -8,14 +8,16 @@ import Modal from './modal/modal';
 const App = () => (
     <div>
         <Modal/>
-        <header className='header-container'>
-            <div>AirJnJ</div>
-            <div>Tabs</div>
-            <div className='user-container'>
-                <div className='host-link'>Become a host</div>
-                <GreetingContainer/>
+        <div className='entry-container'>
+            <div className='header-container'>
+                <div className='logo'>airjnj</div>
+                <div className='nav'>Tabs</div>
+                <div className='user-container'>
+                    <div className='host-link'>Become a host</div>
+                    <GreetingContainer/>
+                </div>
             </div>
-        </header>
+        </div>
         {/* <AuthRoute path='/login' component={LoginFormContainer}/>
         <AuthRoute path='/signup' component={SignupFormContainer}/> */}
     </div>

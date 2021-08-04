@@ -148,17 +148,30 @@ table {
 
 * {
   font-family: "Montserrat";
+  font-weight: 600;
 }
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
+  color: white;
+  width: 100vw;
 }
 
 .user-container {
   display: flex;
+
 }
+
+.logo{
+  width: 33.33%;
+}
+
+.nav{
+  width: 33.33%;
+}
+
 
 /* LOGIN/SIGNUP FORM*/
 
@@ -174,17 +187,22 @@ table {
 
 .form-header {
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid lightgrey;
+}
+
+.form-header > * {
+  padding-bottom: 10px;
+  font-size: small;
 }
 
 .form-type {
   position: fixed;
-  left: 42%;
+  left: 45%;
 }
 
-#close-modal {
-  padding: 3px;
-  top: 10px;
+.welcome-header {
+  padding-top: 20px;
+  padding-bottom: 15px;
 }
 
 #close-modal:hover {
@@ -203,14 +221,21 @@ table {
   padding: 3px;
   width: 230px;
   margin-top: 5px;
+  padding-left: 0px;
+  font-size: small;
+  font-weight: 300;
+}
+
+.form-elements > input {
+  border: 1px solid lightgrey;
 }
 
 .form-button {
   margin-top: 10px;
   background-color: rgb(222, 20, 98);
   border-radius: 5px;
-  width: 240px;
-  height: 25px;
+  width: 235px;
+  height: 30px;
   color: white;
   border: none;
 }
@@ -245,4 +270,10 @@ table {
 
 .greetings-button:hover {
   cursor: pointer;
+}
+
+.entry-container {
+  background-image: url(https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg?im_w=2560);
+  height: 600px;
+  background-size: cover;
 }
