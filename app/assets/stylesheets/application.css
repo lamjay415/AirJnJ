@@ -161,17 +161,15 @@ table {
 
 .user-container {
   display: flex;
-
 }
 
-.logo{
+.logo {
   width: 33.33%;
 }
 
-.nav{
+.nav {
   width: 33.33%;
 }
-
 
 /* LOGIN/SIGNUP FORM*/
 
@@ -197,7 +195,7 @@ table {
 
 .form-type {
   position: fixed;
-  left: 45%;
+  left: 43%;
 }
 
 .welcome-header {
@@ -245,15 +243,15 @@ table {
   cursor: pointer;
 }
 
-.user-dropdown {
-  width: 75px;
-  height: 40px;
-  /* padding-left: 20px; */
-}
-
 .greetings {
   display: flex;
   flex-direction: column;
+}
+
+.session-errors > * {
+  font-weight: 300;
+  color: red;
+  font-size: small;
 }
 
 /* MODAL */

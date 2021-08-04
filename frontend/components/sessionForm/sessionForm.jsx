@@ -30,6 +30,22 @@ class SessionForm extends React.Component{
         });
     }
 
+    showErrors(){
+        let {errors} = this.props
+        if(typeof errors === 'undefined'){
+            return null;
+        }
+        return(
+            <div className='session-errors'>
+              {errors.map((error, i) => (
+                <div key={i}>
+                  {error}
+                </div>
+              ))}
+            </div>
+          );
+    }
+
     render(){
         let {formType} = this.props;
         let form;
@@ -89,7 +105,8 @@ class SessionForm extends React.Component{
                     <div id='close-modal' onClick={this.props.closeModal}>x</div>
                     <div className='form-type'>{formType}</div>
                 </div>
-                <div className='welcome-header'>Welcome to AirJnJ</div>
+                <div className='welcome-header'>Welcome to Airjnj</div>
+                {this.showErrors()}
                 {form}
             </div>
         )
