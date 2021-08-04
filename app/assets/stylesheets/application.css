@@ -238,6 +238,7 @@ table {
   height: 30px;
   color: white;
   border: none;
+  font-weight: 600;
 }
 
 .form-button:hover {
