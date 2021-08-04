@@ -144,7 +144,7 @@ table {
   border-spacing: 0;
 }
 
-/* page styling */
+/* HEADER */
 
 * {
   font-family: "Montserrat";
@@ -160,12 +160,11 @@ table {
   display: flex;
 }
 
+/* LOGIN/SIGNUP FORM*/
+
 .user-form {
   border-radius: 10px;
-  border: 0.5px solid black;
   padding: 24px;
-  width: 250px;
-  height: 275px;
   background-color: white;
   position: fixed;
   top: 50%;
@@ -173,16 +172,51 @@ table {
   transform: translate(-50%, -50%);
 }
 
+.form-header {
+  display: flex;
+  border-bottom: 1px solid black;
+}
+
+.form-type {
+  position: fixed;
+  left: 42%;
+}
+
+#close-modal {
+  padding: 3px;
+  top: 10px;
+}
+
+#close-modal:hover {
+  border-radius: 15px;
+  background-color: lightgray;
+  transition: 1s;
+  cursor: pointer;
+}
+
+.form-elements {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-elements > * {
   padding: 3px;
   width: 230px;
+  margin-top: 5px;
 }
 
 .form-button {
+  margin-top: 10px;
   background-color: rgb(222, 20, 98);
-  width: 230px;
+  border-radius: 5px;
+  width: 240px;
+  height: 25px;
   color: white;
-  padding: 3px;
+  border: none;
+}
+
+.form-button:hover {
+  cursor: pointer;
 }
 
 .user-dropdown {
@@ -196,3 +230,19 @@ table {
   flex-direction: column;
 }
 
+/* MODAL */
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  transition: 1s;
+}
+
+.greetings-button:hover {
+  cursor: pointer;
+}

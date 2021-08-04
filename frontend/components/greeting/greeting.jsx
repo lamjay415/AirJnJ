@@ -9,14 +9,16 @@ class Greeting extends React.Component{
 
     render(){
         // debugger
-        let { currentUser } = this.props;
+        let { currentUser, openModal } = this.props;
         console.log(currentUser);
         const userGreeting = () => {
 
-                return (<div className='greetings'>
-                    Welcome, {currentUser.firstName.toUpperCase()}
-                    <button onClick={this.props.logout}>Logout</button>
-                </div>)
+                return (
+                    <div className='greetings'>
+                        {currentUser.firstName.toUpperCase()}
+                        <div className='greetings-button'onClick={this.props.logout}>Logout</div>
+                    </div>
+                )
                 
         }
 
@@ -24,13 +26,18 @@ class Greeting extends React.Component{
 
                 return (
                     <div className='greetings'>
-                        <Link to='/signup'>Signup</Link>
-                        <Link to='/login'>Login</Link>
+                        <div>User</div>
+                        <div className='greetings-button' onClick={() => openModal('login')}>Login</div>
+                        <div className='greetings-button' onClick={() => openModal('signup')}>Signup</div>
                     </div>
                 )
         }
 
-        return currentUser ? userGreeting() : defaultGreeting();
+        return (
+            <div>
+                {currentUser ? userGreeting() : defaultGreeting()}
+            </div>
+        )
     }
 
 }

@@ -21,7 +21,7 @@ class SessionForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     update(field) {
@@ -35,37 +35,43 @@ class SessionForm extends React.Component{
         let form;
         if(formType === 'signup'){
             form = (
-                <div className='form-elements'>
-                    <div className='form'>First Name: </div>
-                    <input type="text"
-                        value={this.state.first_name}
-                        onChange={this.update('first_name')}
-                    />
-                    <div className='form'>Last Name: </div>
-                    <input type="text"
-                        value={this.state.last_name}
-                        onChange={this.update('last_name')}
-                    />
-                    <div className='form'>Birthdate: </div>
-                    <input type="date"
-                        value={this.state.birthdate}
-                        onChange={this.update('birthdate')}
-                    />
-                </div>
+                    <form onSubmit={this.handleSubmit} className='form-elements' id='signup-from'>
+                        <div>Email:</div>
+                        <input type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                        />
+                        <div className='form'>First Name: </div>
+                        <input type="text"
+                            value={this.state.first_name}
+                            onChange={this.update('first_name')}
+                        />
+                        <div className='form'>Last Name: </div>
+                        <input type="text"
+                            value={this.state.last_name}
+                            onChange={this.update('last_name')}
+                        />
+                        <div className='form'>Birthdate: </div>
+                        <input type="date"
+                            value={this.state.birthdate}
+                            onChange={this.update('birthdate')}
+                        />
+                        <div>Password: </div>
+                        <input type="text"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                        />
+                        <input type = "submit" value={this.props.formType} className='form-button'/>
+                    </form>
             )
-        }
-
-
-        return (
-            <div className='user-form'>
-                <h1>{formType}</h1>
-                <form onSubmit={this.handleSubmit} className='form-elements'>
+        }else{
+            form = (
+                <form onSubmit={this.handleSubmit} className='form-elements' id='login-form'>
                     <div>Email:</div>
                     <input type="text"
                         value={this.state.email}
                         onChange={this.update('email')}
                     />
-                    {form}
                     <div>Password: </div>
                     <input type="text"
                         value={this.state.password}
@@ -73,6 +79,17 @@ class SessionForm extends React.Component{
                     />
                     <input type = "submit" value={this.props.formType} className='form-button'/>
                 </form>
+            )
+        }
+
+
+        return (
+            <div className='user-form'>
+                <div className='form-header'>  
+                    <div id='close-modal' onClick={this.props.closeModal}>x</div>
+                    <div className='form-type'>{formType}</div>
+                </div>
+                {form}
             </div>
         )
     }
