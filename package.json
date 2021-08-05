@@ -34,13 +34,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lamjay415/Clonebnb.git"
+    "url": "git+https://github.com/lamjay415/AirJnJ.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lamjay415/Clonebnb/issues"
+    "url": "https://github.com/lamjay415/AirJnJ/issues"
   },
-  "homepage": "https://github.com/lamjay415/Clonebnb#readme"
+  "homepage": "https://github.com/lamjay415/AirJnJ#readme"
 }
