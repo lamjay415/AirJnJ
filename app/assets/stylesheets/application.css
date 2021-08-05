@@ -263,21 +263,22 @@ body {
   height: 30px;
   color: white;
   border: none;
+  font-weight: 600;
 }
 
 .form-button:hover {
   cursor: pointer;
 }
 
-.user-dropdown {
-  width: 75px;
-  height: 40px;
-  /* padding-left: 20px; */
-}
-
 .greetings {
   display: flex;
   flex-direction: column;
+}
+
+.session-errors > * {
+  font-weight: 300;
+  color: red;
+  font-size: small;
 }
 
 /* MODAL */

@@ -3,6 +3,15 @@ class User < ApplicationRecord
     validates :email, :password_digest, :session_token, presence: true
     validates :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
+    validates :first_name, :last_name, :birthdate, presence: true
+
+    validate :valdiate_age
+
+    def valdiate_age
+        if birthdate.present? && birthdate > 18.years.ago.to_date
+            errors.add(:base, 'Users must be over 18 years old')
+        end
+    end 
 
     has_many :listings, dependent: :destroy
 
