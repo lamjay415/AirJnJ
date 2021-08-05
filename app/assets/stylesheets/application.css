@@ -153,14 +153,16 @@ table {
 
 .header-container {
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
   color: white;
   width: 100vw;
+  /* justify-content: space-between; */
 }
 
 .user-container {
   display: flex;
+  justify-content: flex-end;
+  width: 33.33%;
+  transform: translate(-20px, 0);
 }
 
 .logo {
@@ -169,33 +171,58 @@ table {
 
 .nav {
   width: 33.33%;
+  display: flex;
+  justify-content: center;
 }
 
+body {
+  width: 100vw;
+}
 /* LOGIN/SIGNUP FORM*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, -50px);
+  }
+}
 
 .user-form {
+  width: 280px;
   border-radius: 10px;
   padding: 24px;
   background-color: white;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 280px / 2);
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-header {
-  display: flex;
   border-bottom: 1px solid lightgrey;
-}
-
-.form-header > * {
   padding-bottom: 10px;
   font-size: small;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.form-type {
-  position: fixed;
-  left: 43%;
+#close-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* padding:5px;
+  padding-bottom: 0px; */
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .welcome-header {
@@ -256,15 +283,23 @@ table {
 
 /* MODAL */
 
+@keyframes backgroundFade {
+  100% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
 .modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  /* background: rgba(0, 0, 0, 0.5); */
   z-index: 10;
-  transition: 1s;
+  animation-name: backgroundFade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .greetings-button:hover {
