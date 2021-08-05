@@ -1,0 +1,1 @@
+json.extract! listing, :user_id, :property_type, :property_type_group, :privacy_type, :price, :location, :max_guests, :num_bathrooms, :num_bedrooms, :num_beds, :title, :description
