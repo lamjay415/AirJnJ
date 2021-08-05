@@ -1,25 +1,17 @@
 import React from 'react';
-import { AuthRoute } from '../util/route_util';
-import GreetingContainer from './greeting/greeting_container';
-import LoginFormContainer from './sessionForm/loginFormContainer';
-import SignupFormContainer from './sessionForm/signupFormContainer';
-import Modal from './modal/modal';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import CreateFormContainer from './listingForm/createFormContainer';
+import Home from './Home';
+import { Route, Link, Switch } from 'react-router';
 
 const App = () => (
     <div>
-        <Modal/>
-        <div className='entry-container'>
-            <div className='header-container'>
-                <div className='logo'>airjnj</div>
-                <div className='nav'>Tabs</div>
-                <div className='user-container'>
-                    <div className='host-link'>Become a host</div>
-                    <GreetingContainer/>
-                </div>
-            </div>
-        </div>
+        <Switch>
         {/* <AuthRoute path='/login' component={LoginFormContainer}/>
         <AuthRoute path='/signup' component={SignupFormContainer}/> */}
+            <Route exact path='/' component={Home}/>
+            <ProtectedRoute path='/become-a-host' component={CreateFormContainer}/>
+        </Switch>
     </div>
 );
 

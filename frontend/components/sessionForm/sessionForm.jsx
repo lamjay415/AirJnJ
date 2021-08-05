@@ -78,6 +78,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('password')}
                         />
                         <input type = "submit" value={this.props.formType} className='form-button'/>
+                        {this.props.loginForm}
                     </form>
             )
         }else{
@@ -94,6 +95,7 @@ class SessionForm extends React.Component{
                         onChange={this.update('password')}
                     />
                     <input type = "submit" value={this.props.formType} className='form-button'/>
+                    {this.props.signupForm}
                 </form>
             )
         }

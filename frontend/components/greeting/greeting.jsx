@@ -16,6 +16,7 @@ class Greeting extends React.Component{
                 return (
                     <div className='greetings'>
                         {currentUser.firstName.toUpperCase()}
+                        <Link to='/hostings' class='link'>My Hostings</Link>
                         <div className='greetings-button'onClick={this.props.logout}>Logout</div>
                     </div>
                 )

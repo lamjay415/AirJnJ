@@ -155,6 +155,7 @@ table {
   display: flex;
   color: white;
   width: 100vw;
+  align-items: center;
   /* justify-content: space-between; */
 }
 
@@ -167,6 +168,8 @@ table {
 
 .logo {
   width: 33.33%;
+  text-decoration: none;
+  color: white;
 }
 
 .nav {
@@ -310,4 +313,9 @@ body {
   background-image: url(https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg?im_w=2560);
   height: 600px;
   background-size: cover;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
 }
