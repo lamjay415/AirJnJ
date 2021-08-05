@@ -190,13 +190,13 @@ body {
 }
 
 .user-form {
-  width: 275px;
+  width: 280px;
   border-radius: 10px;
   padding: 24px;
   background-color: white;
   position: absolute;
   top: 30%;
-  left: calc(50% - 275px / 2);
+  left: calc(50% - 280px / 2);
   animation-name: fadeIn;
   animation-duration: 1s;
   animation-fill-mode: forwards;
@@ -219,6 +219,10 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  /* padding:5px;
+  padding-bottom: 0px; */
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .welcome-header {
