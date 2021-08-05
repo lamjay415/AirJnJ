@@ -156,7 +156,6 @@ table {
   color: white;
   width: 100vw;
   align-items: center;
-  /* justify-content: space-between; */
 }
 
 .user-container {
@@ -318,4 +317,59 @@ body {
 .link {
   text-decoration: none;
   color: white;
+}
+
+/* BECOME A HOST PAGE */
+.listing-form-container {
+  display: flex;
+  height: 100vh;
+}
+
+.form-graphics {
+  background-color: black;
+  width: 50%;
+  position: inherit;
+}
+
+.listing-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-side-container {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+.form-graphics > .link{
+  position: fixed;
+  padding: 10px;
+}
+.graphics-text {
+  color: white;
+}
+
+.graphics-text {
+  position: absolute;
+  left: 15%;
+  top: 45%;
+  font-size: 40px;
+  width: 270px;
+  text-align: center;
+}
+
+.listing-form > * {
+  padding: 3px;
+  width: 230px;
+  margin-top: 5px;
+  padding-left: 0px;
+  font-size: small;
+  font-weight: 300;
+}
+
+.listing-form > .form-button {
+  font-weight: 600;
+  width: 235px;
 }

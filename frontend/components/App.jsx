@@ -1,6 +1,6 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import CreateFormContainer from './listingForm/createFormContainer';
+import CreateFormContainer from './listings/createFormContainer';
 import Home from './Home';
 import { Route, Link, Switch } from 'react-router';
 
