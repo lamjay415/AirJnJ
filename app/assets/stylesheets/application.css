@@ -161,8 +161,8 @@ table {
 .user-container {
   display: flex;
   justify-content: flex-end;
-  width: 33.33%; 
-  transform: translate(-20px,0);
+  width: 33.33%;
+  transform: translate(-20px, 0);
 }
 
 .logo {
@@ -195,7 +195,7 @@ body {
   padding: 24px;
   background-color: white;
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: calc(50% - 275px / 2);
   animation-name: fadeIn;
   animation-duration: 1s;
@@ -278,15 +278,23 @@ body {
 
 /* MODAL */
 
+@keyframes backgroundFade {
+  100% {
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
 .modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  /* background: rgba(0, 0, 0, 0.5); */
   z-index: 10;
-  transition: 1s;
+  animation-name: backgroundFade;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .greetings-button:hover {
