@@ -12,10 +12,12 @@ class Api::ListingsController < ApplicationController
 
     def index
         @listings = Listing.all
+        render :index
     end
 
     def show
         @listing = Lising.find(params[:id])
+        render :show
     end
 
     def update

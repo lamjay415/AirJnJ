@@ -10,13 +10,12 @@ class Greeting extends React.Component{
     render(){
         // debugger
         let { currentUser, openModal } = this.props;
-        console.log(currentUser);
         const userGreeting = () => {
 
                 return (
                     <div className='greetings'>
                         {currentUser.firstName.toUpperCase()}
-                        <Link to='/hostings' class='link'>My Hostings</Link>
+                        <Link to='/hostings' className='link'>My Hostings</Link>
                         <div className='greetings-button'onClick={this.props.logout}>Logout</div>
                     </div>
                 )
