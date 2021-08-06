@@ -10,7 +10,7 @@ const mSTP = (state) => ({
 
 const mDTP = dispatch => ({
     fetchHostings: () => dispatch(fetchListings())
-})
+});
 
 class HostingIndex extends React.Component{
 
