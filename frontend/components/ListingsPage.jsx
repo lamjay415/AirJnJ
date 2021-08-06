@@ -4,7 +4,7 @@ import ListingsIndexContainer from './listings/listingsIndexContainer';
 
 const ListingsPage = () => (
 
-    <div>
+    <div className='listings-page'>
         <Header/>
         <div className='listings-page-body'>
             <ListingsIndexContainer/>
