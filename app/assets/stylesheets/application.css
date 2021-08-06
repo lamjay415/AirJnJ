@@ -304,8 +304,13 @@ body {
   animation-fill-mode: forwards;
 }
 
-.greetings-button:hover {
+.greetings-button:hover,
+.div-link:hover {
   cursor: pointer;
+}
+
+.div-link{
+  text-align: center;
 }
 
 .entry-container {
@@ -380,6 +385,11 @@ body {
   color: black;
   font-weight: 300;
   padding: 5px;
+  /* margin: 10px; */
+}
+
+.listing-item:hover{
+  cursor: pointer;
 }
 
 .listings-page-body {
@@ -387,10 +397,12 @@ body {
 }
 
 .listings-container {
-  width: 50%;
+  width: 45%;
 }
 .map-container {
-  width: 50%;
+  position: fixed;
+  height: 95vh;
+  width: 55%;
 }
 
 .listings-page > .header-container > .logo {
@@ -398,6 +410,5 @@ body {
 }
 
 .listings-page > .header-container > .user-container {
-  color: rgb(80,80,80)
+  color: rgb(80, 80, 80);
 }
-

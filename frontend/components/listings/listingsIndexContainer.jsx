@@ -1,29 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListings } from '../../actions/listing_actions';
+import { withRouter } from 'react-router';
 import ListingDetail from './listingDetailContainer';
 
 class ListingsIndex extends React.Component{
 
     constructor(props){
         super(props);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchListings();
     }
 
+    handleClick(listing){
+        return (e) => {
+            e.preventDefault();
+            this.props.history.push(`/listings/${listing.id}`);
+        }
+    }
+
     render(){
+        console.log(this.props);
         const listings = this.props.listings.map((listing,idx) => {
             return (
-                <div className='listing-item' key={`listing${idx}`}>
+                <div className='listing-item' key={`listing${idx}`} onClick={this.handleClick(listing)}>
                     <div>Title: {listing.title}</div>
                     <div>Guests: {listing.maxGuests}</div>
                     <div>{listing.propertyType}</div>
                     <div>{listing.numBeds} Beds</div>
                     <div>{listing.numBathrooms} Bathrooms</div>
-                    <div>{listing.amenities} zz </div>
-                    <div>{listing.price} per Night</div>
+                    <div>{listing.amenities}</div>
+                    <div>${listing.price} / night</div>
                 </div>
             );
         });
@@ -45,5 +55,5 @@ const mDTP = dispatch => ({
     fetchListings: () => dispatch(fetchListings())
 });
 
-export default connect(mSTP, mDTP)(ListingsIndex);
+export default withRouter(connect(mSTP, mDTP)(ListingsIndex));
 

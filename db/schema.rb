@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2021_08_05_002225) do
     t.string "amenities"
     t.string "title", null: false
     t.string "description", null: false
-    t.decimal "price", null: false
+    t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_listings_on_user_id"

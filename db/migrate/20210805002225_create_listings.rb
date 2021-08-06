@@ -14,7 +14,7 @@ class CreateListings < ActiveRecord::Migration[5.2]
       t.string :amenities
       t.string :title, null: false
       t.string :description, null: false
-      t.decimal :price, null: false
+      t.integer :price, null: false
 
       t.timestamps
     end

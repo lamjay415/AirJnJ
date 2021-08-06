@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => ({
 const mDTP = (dispatch, ownProps) => ({
     processForm: (user) => dispatch(login(user)),
     signupForm: (
-        <div onClick={()=> dispatch(openModal('signup'))}>
+        <div onClick={()=> dispatch(openModal('signup'))} className='div-link'>
             or signup here
         </div>
     ),

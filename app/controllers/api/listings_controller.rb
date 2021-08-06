@@ -16,7 +16,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def show
-        @listing = Lising.find(params[:id])
+        @listing = Listing.find(params[:id])
         render :show
     end
 

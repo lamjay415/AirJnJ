@@ -6,6 +6,7 @@ import { Route, Link, Switch } from 'react-router';
 import HostingsContainer from './hostings/hostingsContainer';
 import ListingsIndexContainer from './listings/listingsIndexContainer';
 import ListingsPage from './ListingsPage';
+import ListingDetailContainer from './listings/listingDetailContainer';
 
 const App = () => (
     <div>
@@ -14,6 +15,7 @@ const App = () => (
             <ProtectedRoute path='/become-a-host' component={CreateFormContainer}/>
             <ProtectedRoute path='/hostings' component={HostingsContainer}/>
             <Route exact path='/listings' component={ListingsPage}/>
+            <Route exact path='/listings/:id' component={ListingDetailContainer}/>
         </Switch>
     </div>
 );
