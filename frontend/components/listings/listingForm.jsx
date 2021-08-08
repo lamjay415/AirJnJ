@@ -7,13 +7,15 @@ class ListingForm extends React.Component{
     constructor(props){
         super(props)
         this.state = this.props.listing;
+        this.state.completed = false;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
         const listing = Object.assign({}, this.state);
-        this.props.processForm(listing);
+        this.props.processForm(listing).then(() => this.setState({completed:true}));
+        console.log(this.state);
     }
 
 
@@ -24,6 +26,7 @@ class ListingForm extends React.Component{
     render(){
         return (
             <div className='listing-form-container'>
+                {this.state.completed ? <FormCompleted formType={this.props.formType}/> : null}
                 <div className='form-graphics'>
                     <Link to='/' className='link'>airjnj</Link>
                     <div className='graphics-text'>Hosting makes Airjnj, Airjnj</div>
@@ -52,7 +55,7 @@ class ListingForm extends React.Component{
                             />
                             <div>Max Guests:  </div>
                             <input type="number"
-                                value={this.state.maxGuests}
+                                value={this.state.maxGuests > 0 ? this.state.MaxGuests : ''}
                                 onChange={this.update('maxGuests')}
                             />
                             <div>Bedrooms:  </div>

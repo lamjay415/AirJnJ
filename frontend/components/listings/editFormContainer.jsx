@@ -23,7 +23,6 @@ class EditListingForm extends React.Component{
     render(){
         const { listing, processForm, formType} = this.props;
         if(!listing) return null;
-        console.log(this.listing);
         return(
             <ListingForm
                 listing={listing}

@@ -5,4 +5,3 @@ require_relative 'application'
 Rails.application.initialize!
 
 Jbuilder.key_format camelize: :lower
-json.deep_format_keys!

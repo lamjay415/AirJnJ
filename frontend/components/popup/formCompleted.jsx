@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button, notification } from 'antd';
 
 class FormCompleted extends React.Component {
 
@@ -9,10 +10,17 @@ class FormCompleted extends React.Component {
 
     render(){
 
+        let message = '';
+
+        if(this.props.formType === 'Create Listing'){
+            message = 'created';
+        }else{
+            message = 'updated'
+        }
         return(
             <div className='form-popup'>
-                <div>Form has been updated!</div>
-                <Link to='/hostings' className='form-button'>Back to Listings</Link>
+                <div>Listing has been successfully {message}!</div>
+                <Link to='/hostings'>Back to Listings</Link>
             </div>
         )
     }
