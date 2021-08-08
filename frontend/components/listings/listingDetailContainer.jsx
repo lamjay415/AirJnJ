@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchListing } from '../../actions/listing_actions';
+import { deleteListing, fetchListing, updateListing } from '../../actions/listing_actions';
 
 class ListingDetail extends React.Component{
 
@@ -18,9 +18,9 @@ class ListingDetail extends React.Component{
             <div>
                 <div>Title: {listing.title}</div>
                 <div>Description: {listing.description}</div>
-                
                 <div>Location: {listing.location}</div>
                 <div>Price: {listing.price}</div>
+
             </div>
         )
     }

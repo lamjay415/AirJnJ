@@ -6,15 +6,15 @@ import { createListing } from '../../actions/listing_actions'
 const mSTP = (state) => ({
     listing: {
         user_id: state.session.id,
-        property_type_group: '',
-        property_type: '',
-        privacy_type: '',
-        price: '',
+        propertyTypeGroup: '',
+        propertyType: '',
+        privacyType: '',
+        price: 0,
         location: '',
-        max_guests: '',
-        num_bedrooms: '',
-        num_beds: '',
-        num_bathrooms: '',
+        maxGuests: 0,
+        numBedrooms: 0,
+        numBeds: 0,
+        numBathrooms: 0,
         amenities: '',
         title: '',
         description: ''

@@ -2,7 +2,7 @@ class Api::ListingsController < ApplicationController
 
     def create
         @listing = Listing.new(listing_params)
-        if @listing.save
+        if @listing.save!
             render :show
         else
             render json: @listing.errors.full_messages, status: 422
@@ -22,8 +22,8 @@ class Api::ListingsController < ApplicationController
 
     def update
         @listing = Listing.find(params[:id])
-
-        if @listing.update(listing_params)
+        puts params
+        if @listing.update!(listing_params)
             render :show
         else
             render json: @listing.errors.full_messages, status: 422
@@ -31,9 +31,9 @@ class Api::ListingsController < ApplicationController
     end
 
     def destroy
-        @listing = Listing.find(params[id])
+        @listing = Listing.find(params[:id])
 
-        if @listing.destroy
+        if @listing.destroy!
             render :show
         else
             render json: @listing.errors.full_messages, status: 422

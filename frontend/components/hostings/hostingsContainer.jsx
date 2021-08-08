@@ -1,16 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchListings } from '../../actions/listing_actions';
+import { deleteListing, fetchListings } from '../../actions/listing_actions';
 import { selectMyHostings } from '../../reducers/selectors';
+import Header from '../Header';
 import HostingDetail from './hostingDetail';
-
-const mSTP = (state) => ({
-    hostings: selectMyHostings(state)
-});
-
-const mDTP = dispatch => ({
-    fetchHostings: () => dispatch(fetchListings())
-});
 
 class HostingIndex extends React.Component{
 
@@ -24,14 +17,27 @@ class HostingIndex extends React.Component{
 
     render(){
         const hostings = this.props.hostings.map((hosting,idx) => {
-            return (<HostingDetail hosting={hosting} key={`hosting${idx}`}/>)
+            return (<HostingDetail hosting={hosting} 
+                key={`hosting${idx}`} 
+                />)
         });
         return (
             <div>
-                {hostings}
+                <Header/>
+                <div>
+                    {hostings}
+                </div>
             </div>
         )
     }
 }
+
+const mSTP = (state) => ({
+    hostings: selectMyHostings(state)
+});
+
+const mDTP = dispatch => ({
+    fetchHostings: () => dispatch(fetchListings())
+});
 
 export default connect(mSTP, mDTP)(HostingIndex);

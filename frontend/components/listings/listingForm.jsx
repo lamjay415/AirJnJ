@@ -16,12 +16,12 @@ class ListingForm extends React.Component{
     }
 
     update(field) {
-        return e => this.setState({
-          [field]: e.currentTarget.value
-        });
+        console.log()
+        return e => this.setState({[field]: e.currentTarget.value});
     }
 
     render(){
+        console.log(this.props);
         return (
             <div className='listing-form-container'>
                 <div className='form-graphics'>
@@ -32,18 +32,18 @@ class ListingForm extends React.Component{
                     <form onSubmit={this.handleSubmit} className='listing-form'>
                             <div>Property Type Group: </div>
                             <input type="text"
-                                value={this.state.property_type_group}
-                                onChange={this.update('property_type_group')}
+                                value={this.state.propertyTypeGroup}
+                                onChange={this.update('propertyTypeGroup')}
                             />
                             <div>Property Type: </div>
                             <input type="text"
-                                value={this.state.property_type}
-                                onChange={this.update('property_type')}
+                                value={this.state.propertyType}
+                                onChange={this.update('propertyType')}
                             />
                             <div>Privacy Type: </div>
                             <input type="text"
-                                value={this.state.privacy_type}
-                                onChange={this.update('privacy_type')}
+                                value={this.state.privacyType}
+                                onChange={this.update('privacyType')}
                             />
                             <div>Location: </div>
                             <input type="text"
@@ -52,23 +52,23 @@ class ListingForm extends React.Component{
                             />
                             <div>Max Guests:  </div>
                             <input type="number"
-                                value={this.state.max_guests}
-                                onChange={this.update('max_guests')}
+                                value={this.state.maxGuests}
+                                onChange={this.update('maxGuests')}
                             />
                             <div>Bedrooms:  </div>
                             <input type="number"
-                                value={this.state.num_bedrooms}
-                                onChange={this.update('num_bedrooms')}
+                                value={this.state.numBedrooms> 0 ? this.state.numBedrooms : ''}
+                                onChange={this.update('numBedrooms')}
                             />
                             <div>Beds:  </div>
                             <input type="number"
-                                value={this.state.num_beds}
-                                onChange={this.update('num_beds')}
+                                value={this.state.numBeds > 0 ? this.state.numBeds : ''}
+                                onChange={this.update('numBeds')}
                             />
                             <div>Bathrooms:  </div>
                             <input type="number"
-                                value={this.state.num_bathrooms}
-                                onChange={this.update('num_bathrooms')}
+                                value={this.state.numBathrooms> 0 ? this.state.numBathrooms : ''}
+                                onChange={this.update('numBathrooms')}
                             />
                             <div>Amenities  </div>
                             <input type="text"
@@ -76,8 +76,8 @@ class ListingForm extends React.Component{
                                 onChange={this.update('amenities')}
                             />
                             <div>Price per day:  </div>
-                            <input type="text"
-                                value={this.state.price}
+                            <input type="number"
+                                value={this.state.price > 0 ? this.state.price : ''}
                                 onChange={this.update('price')}
                             />
                             <div>Title:  </div>

@@ -333,6 +333,7 @@ body {
 .form-graphics {
   background-color: black;
   width: 50%;
+  height: 100%;
   position: inherit;
 }
 
