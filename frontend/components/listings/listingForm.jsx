@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FormCompleted from '../popup/formCompleted';
 
 class ListingForm extends React.Component{
 
@@ -12,16 +13,15 @@ class ListingForm extends React.Component{
     handleSubmit(e){
         e.preventDefault();
         const listing = Object.assign({}, this.state);
-        this.props.processForm(listing).then(this.props.history.push('/hostings'));
+        this.props.processForm(listing);
     }
 
+
     update(field) {
-        console.log()
         return e => this.setState({[field]: e.currentTarget.value});
     }
 
     render(){
-        console.log(this.props);
         return (
             <div className='listing-form-container'>
                 <div className='form-graphics'>
