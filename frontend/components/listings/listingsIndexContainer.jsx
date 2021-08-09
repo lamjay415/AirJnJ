@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListings } from '../../actions/listing_actions';
-import { withRouter } from 'react-router';
+import { withRouter, Link } from 'react-router-dom';
 import ListingDetail from './listingDetailContainer';
 
 class ListingsIndex extends React.Component{
@@ -23,10 +23,8 @@ class ListingsIndex extends React.Component{
     }
 
     render(){
-        if(!this.props.listings){
-            return null;
-        }
-        const listings = this.props.listings.map((listing,idx) => {
+
+        let listings = this.props.listings.map((listing,idx) => {
             return (
                 <div className='listing-item' key={`listing${idx}`} onClick={this.handleClick(listing)}>
                     <div>Title: {listing.title}</div>
@@ -39,6 +37,15 @@ class ListingsIndex extends React.Component{
                 </div>
             );
         });
+
+        if(listings.length===0){
+            listings = (
+                <div className='no-listings-container'>
+                    <div className='no-listings-message'>Sorry! There are no listings in this area.</div>
+                    <Link to='/'>Click Here to go back</Link>
+                </div>
+            )
+        }
 
         return (
             <div className='listings-container' >
