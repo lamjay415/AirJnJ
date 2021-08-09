@@ -4,5 +4,6 @@ class Listing < ApplicationRecord
     validates :max_guests, :num_bathrooms, :num_bedrooms, :num_beds, :title, :description, presence: true
 
     belongs_to :user
+    has_many :reservations, dependent: :destroy
 
 end
