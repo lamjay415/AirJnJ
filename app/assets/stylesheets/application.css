@@ -443,3 +443,26 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
+
+/* SEARCH BUTTON */
+.searchBar-container {
+  font-weight: 300;
+  position: absolute;
+  left: 30%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  background-color: white;
+  width: 50%;
+  padding: 5px;
+}
+
+.search-button {
+  background-color: rgb(255, 56, 92);
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  font-weight: 600;
+}

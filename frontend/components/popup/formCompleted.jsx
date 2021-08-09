@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button, notification } from 'antd';
 
 class FormCompleted extends React.Component {
 

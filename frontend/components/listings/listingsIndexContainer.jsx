@@ -11,9 +11,9 @@ class ListingsIndex extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
-    componentDidMount(){
-        this.props.fetchListings();
-    }
+    // componentDidMount(){
+    //     this.props.fetchListings();
+    // }
 
     handleClick(listing){
         return (e) => {
@@ -23,7 +23,6 @@ class ListingsIndex extends React.Component{
     }
 
     render(){
-        console.log(this.props);
         const listings = this.props.listings.map((listing,idx) => {
             return (
                 <div className='listing-item' key={`listing${idx}`} onClick={this.handleClick(listing)}>
@@ -47,13 +46,13 @@ class ListingsIndex extends React.Component{
 
 }
 
-const mSTP = state => ({
-    listings: Object.values(state.entities.listings)
-});
+// const mSTP = state => ({
+//     listings: Object.values(state.entities.listings)
+// });
 
-const mDTP = dispatch => ({
-    fetchListings: () => dispatch(fetchListings())
-});
+// const mDTP = dispatch => ({
+//     fetchListings: () => dispatch(fetchListings())
+// });
 
-export default withRouter(connect(mSTP, mDTP)(ListingsIndex));
+export default withRouter(ListingsIndex);
 

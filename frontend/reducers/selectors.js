@@ -9,3 +9,16 @@ export const selectMyHostings = state => {
     }); 
 
 };
+
+export const selectOnLocation = (state,location) => {
+    const allListings = Object.values(state.entities.listings);
+    return allListings.filter(listing => {
+        if(listing.location.includes(location)){
+            return listing;
+        }
+    });
+}
+
+export const asArray = ({ listings }) => (
+    Object.keys(listings).map(key => listings[key])
+);

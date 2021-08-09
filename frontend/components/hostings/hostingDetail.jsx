@@ -19,11 +19,6 @@ class HostingDetail extends React.Component{
         this.props.deleteHosting(this.props.hosting.id);
     }
 
-    // handleEdit(e){
-    //     e.preventDefault();
-    //     this.props.history.push(`/hostings/${this.props.hosting.id}/edit`);
-    // }
-
     render(){
         const {hosting} = this.props;
         return (
