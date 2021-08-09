@@ -6,32 +6,32 @@ class ListingsMap extends React.Component{
 
     constructor(props){
         super(props);
-        this.lat = '';
-        this.lng = '';
     }
 
     componentDidMount(){
         let geocoder = new google.maps.Geocoder();
         let that = this;
         const searchLocation = this.props.location.pathname.slice(8);
+
         geocoder.geocode({'address': searchLocation}, function(results, status){
-            that.lat = parseFloat(results[0].geometry.location.lat().toFixed(3));
-            that.lng = parseFloat(results[0].geometry.location.lng().toFixed(3));
+
+            let lat = results[0].geometry.location.lat();
+            let lng = results[0].geometry.location.lng();
             const mapOptions = {
                 center: {
-                    lat: that.lat, lng: that.lng
+                    lat: lat, lng: lng
                 },
                 zoom: 13
             }
-            that.map = new google.maps.Map(that.mapNode, mapOptions);
+            let map = new google.maps.Map(that.mapNode, mapOptions);
+            that.MarkerManager = new MarkerManager(map,that.handleMarkerClick.bind(that));
+            that.MarkerManager.updateMarkers(that.props.listings);
         });
-        this.MarkerManager = new MarkerManager(this.map,this.handleMarkerClick.bind(this));
-        this.MarkerManager.updateMarkers(this.props.listings);
     }
 
-    componentDidUpdate(){
-        this.MarkerManager.updateMarkers(this.props.listings);
-    }
+    // componentDidUpdate(){
+    //     this.MarkerManager.updateMarkers(this.props.listings);
+    // }
 
     handleMarkerClick(listing) {
         this.props.history.push(`listings/${listing.id}`);

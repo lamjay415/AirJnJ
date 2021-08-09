@@ -23,6 +23,9 @@ class ListingsIndex extends React.Component{
     }
 
     render(){
+        if(!this.props.listings){
+            return null;
+        }
         const listings = this.props.listings.map((listing,idx) => {
             return (
                 <div className='listing-item' key={`listing${idx}`} onClick={this.handleClick(listing)}>

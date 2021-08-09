@@ -20,7 +20,6 @@ export default class MarkerManager {
         Object.keys(this.markers)
             .filter(listingId=> !listingObjs[listingId])
             .forEach((listingId) => this.removeMarker(this.markers[listingId]));
-        
     }
 
     createMarker(listing){
@@ -37,8 +36,7 @@ export default class MarkerManager {
             });
             marker.addListener('click', () => that.handleClick(listing));
             that.markers[marker.listingId] = marker;
-            }
-        );
+        });
         // this.markers = curMarkers;
     }
 
