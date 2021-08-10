@@ -19,6 +19,7 @@ const App = () => (
             <Route exact path='/listings/:id' component={ListingDetailContainer}/>
             <Route exact path='/search/:location' component={ListingsPageContainer}/>
             <ProtectedRoute exact path='/hostings/:id/edit' component={EditFormContainer}/>
+            <ProtectedRoute exact path='/trips'/>
         </Switch>
     </div>
 );

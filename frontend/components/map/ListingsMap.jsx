@@ -34,7 +34,7 @@ class ListingsMap extends React.Component{
     // }
 
     handleMarkerClick(listing) {
-        this.props.history.push(`listings/${listing.id}`);
+        this.props.history.push(`/listings/${listing.id}`);
     }
 
     render(){

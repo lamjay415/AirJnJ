@@ -23,9 +23,9 @@ class SearchBar extends React.Component {
     render(){
         return (
             <div className='searchBar-container'>
-                <div>
-                    <div>Location</div>
-                    <input type='text' onChange={this.update}/>
+                <div className='search-div'>
+                    <div className='search-text'>Location </div>
+                    <input type='text' onChange={this.update} placeholder='Where are you going?' className='search-input'/>
                 </div>
                 <div className='search-button' onClick={this.handleClick}>
                     Search

@@ -6,9 +6,7 @@ const Header = () => (
     
     <div className='header-container'>
         <Link to='/' className='logo'>airjnj</Link>
-        <div className='nav'>
-            <Link to='/listings' className='link'>Places to Stay</Link>
-        </div>
+
         <div className='user-container'>
             <Link to='/become-a-host' className='link'>Become a host</Link>
             <GreetingContainer/>

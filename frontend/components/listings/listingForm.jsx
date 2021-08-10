@@ -54,7 +54,7 @@ class ListingForm extends React.Component{
                             />
                             <div>Max Guests:  </div>
                             <input type="number"
-                                value={this.state.maxGuests > 0 ? this.state.MaxGuests : ''}
+                                value={this.state.maxGuests > 0 ? this.state.maxGuests : ''}
                                 onChange={this.update('maxGuests')}
                             />
                             <div>Bedrooms:  </div>
