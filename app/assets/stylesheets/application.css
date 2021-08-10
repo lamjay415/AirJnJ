@@ -153,7 +153,7 @@ table {
 
 .header-container {
   /* padding: 10px; */
-  margin-top: 50px;
+  margin-top: 40px;
   display: flex;
   color: white;
   width: 100vw;
@@ -274,6 +274,22 @@ body {
   position: absolute;
   display: none;
   flex-direction: column;
+  border: 1px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  background: white;
+  color: rgb(89, 89, 89);
+  top: 70px;
+  right: 70px;
+}
+
+.menu > * {
+  font-size: small;
+  padding: 7px 50px 7px 0;
+}
+
+.menu > *:hover {
+  background-color: whitesmoke;
 }
 
 .menu-button {
@@ -331,6 +347,11 @@ body {
 .link {
   text-decoration: none;
   color: white;
+}
+
+.menu > .link {
+  text-decoration: none;
+  color: rgb(89, 89, 89);
 }
 
 /* BECOME A HOST PAGE */
@@ -492,7 +513,7 @@ body {
   width: 75%;
 }
 
-.search-div{
+.search-div {
   width: 100%;
 }
 

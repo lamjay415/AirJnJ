@@ -13,6 +13,7 @@ const Home = () => (
             <Header/>
             <SearchBarContainer/>
         </div>
+        
     </div>
 
 )
