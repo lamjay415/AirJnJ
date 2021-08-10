@@ -2,6 +2,8 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+// import './style.css';
+
 class SearchBar extends React.Component {
 
     constructor(props){
@@ -10,6 +12,7 @@ class SearchBar extends React.Component {
         this.state.searchLocation = '';
         this.update = this.update.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.initAutocomplete = this.initAutocomplete.bind(this);
     }
 
     update(e){
@@ -17,23 +20,37 @@ class SearchBar extends React.Component {
     }
 
     handleClick(){
-        this.props.history.push(`search/${this.state.searchLocation}`);
+        if(this.state.searchLocation=== ''){
+            document.getElementById('autocomplete').setAttribute('placeholder','Try searching for a city!');
+        }else{
+            this.props.history.push(`search/${this.state.searchLocation}`);
+        }
     }
 
     componentDidMount(){
-        let autocomplete;
-        function initAutoComplete(){
-            autocomplete = new google.maps.places.Autocomplete(
-                document.getElementById('autocomplete'),
-                {
-                    types: ['city'],
-                    componentRestrictions: {'country': ['USA']},
-                    fields: ['place_id', 'geometry', 'name']
-                }
-            );
-            autocomplete.addListener('place_changed', onPlaceChanged);
-        }
+        this.initAutocomplete();
     }
+    
+    initAutocomplete(){
+        const autocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('autocomplete'),
+            {
+                componentRestrictions: {'country': ['us']},
+                fields: ['place_id', 'geometry', 'name']
+            }
+        );
+        autocomplete.addListener('place_changed', ()=>{
+            let place = autocomplete.getPlace();
+            if(!place.geometry){
+                document.getElementById('autocomplete').placeholder = 'Try entering a city'
+            }else{
+                document.getElementById('autocomplete').value = place.name;
+                this.setState({searchLocation:[place.name]});
+                this.handleClick();
+            }
+        });
+    }
+
 
     render(){
         return (

@@ -19,11 +19,12 @@ module.exports = {
             presets: ['@babel/env', '@babel/react']
           }
         },
-      }
+        
+      },
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*']
+    extensions: ['.js', '.jsx', '*', '.css']
   }
 };

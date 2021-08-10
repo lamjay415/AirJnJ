@@ -14,6 +14,7 @@ class Greeting extends React.Component{
 
     toggleMenu = () => {
         let menu = document.getElementsByClassName('menu')[0];
+        menu.style.display = 'none';
         let menu_button = document.getElementsByClassName('menu-button')[0];
         menu_button.addEventListener('click', () => {
             menu.style.display === 'none' ? menu.style.display = 'flex' : menu.style.display = 'none';  
@@ -47,7 +48,7 @@ class Greeting extends React.Component{
 
         return (
             <div>
-                <div className='menu-button'> TEST
+                <div className='menu-button'>
                     <div className='hamburger'></div>
                     <div className='profile-pic'></div>
                 </div>
