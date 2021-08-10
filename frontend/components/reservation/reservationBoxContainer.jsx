@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import {createReservation, deleteReservation} from '../../actions/reservation_actions';
 
 class ReservationBox extends React.Component{
 
@@ -13,11 +15,21 @@ class ReservationBox extends React.Component{
             total: '',
             guests: ''
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    calculateDays(start, end){
+        let day = 24 * 60 * 60 * 1000;
+        let startDate = new Date(start);
+        let endDate = new Date(end);
+        return Math.round(Math.abs((startDate - endDate)/ day))+1;
     }
 
     handleSubmit(e){
         e.preventDefault();
         const reservation = Object.assign({}, this.state);
+        reservation.total = this.calculateDays(reservation.startDate, reservation.endDate) * reservation.price;
+        this.props.createReservation(reservation).then(()=> console.log('dates have been reserved'));
     }
 
     update(field) {
@@ -59,5 +71,13 @@ class ReservationBox extends React.Component{
     }
 }
 
-export default ReservationBox;
+// const mSTP = (state,ownProps) => ({
+//     reservation: state.entities.reservation
+// })
+
+const mDTP = dispatch => ({
+    createReservation: reservation => dispatch(createReservation(reservation))
+});
+
+export default connect(null, mDTP)(ReservationBox);
 

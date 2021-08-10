@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListing } from '../../actions/listing_actions';
 import Header from '../Header';
-import ReservationBox from '../reservation/reservation';
+import ReservationBoxContainer from '../reservation/reservationBoxContainer';
 class ListingDetail extends React.Component{
 
     constructor(props){
@@ -31,7 +31,7 @@ class ListingDetail extends React.Component{
                             <div>Location: {listing.location}</div>
                             <div>Price: {listing.price}</div>
                         </div>
-                        <ReservationBox listing={listing} 
+                        <ReservationBoxContainer listing={listing} 
                         currentUser={currentUser}
                         />
                     </div>

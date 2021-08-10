@@ -15,7 +15,6 @@ class ListingForm extends React.Component{
         e.preventDefault();
         const listing = Object.assign({}, this.state);
         this.props.processForm(listing).then(() => this.setState({completed:true}));
-        console.log(this.state);
     }
 
 
