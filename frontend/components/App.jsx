@@ -8,6 +8,7 @@ import ListingsIndexContainer from './listings/listingsIndexContainer';
 import ListingsPageContainer from './ListingsPageContainer';
 import ListingDetailContainer from './listings/listingDetailContainer';
 import EditFormContainer from './listings/editFormContainer';
+import ReservationIndexContainer from './reservation/reservationIndexContainer';
 
 const App = () => (
     <div>
@@ -19,7 +20,7 @@ const App = () => (
             <Route exact path='/listings/:id' component={ListingDetailContainer}/>
             <Route exact path='/search/:location' component={ListingsPageContainer}/>
             <ProtectedRoute exact path='/hostings/:id/edit' component={EditFormContainer}/>
-            <ProtectedRoute exact path='/trips'/>
+            <ProtectedRoute exact path='/trips' component={ReservationIndexContainer}/>
         </Switch>
     </div>
 );

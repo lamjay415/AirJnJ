@@ -281,6 +281,7 @@ body {
   color: rgb(89, 89, 89);
   top: 70px;
   right: 70px;
+  z-index: 10;
 }
 
 .menu > * {
@@ -297,6 +298,10 @@ body {
   /* margin-left: 50px; */
   width: 135px;
   justify-content: flex-end;
+}
+
+.menu-button:hover {
+  cursor: pointer;
 }
 
 .session-errors > * {

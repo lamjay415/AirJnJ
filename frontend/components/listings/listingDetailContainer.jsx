@@ -38,12 +38,6 @@ class ListingDetail extends React.Component{
                 </div>
 
             </div>
-            // <div>
-            //     <div>Title: {listing.title}</div>
-            //     <div>Description: {listing.description}</div>
-            //     <div>Location: {listing.location}</div>
-            //     <div>Price: {listing.price}</div>
-            // </div>
         )
     }
 

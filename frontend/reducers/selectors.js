@@ -10,6 +10,18 @@ export const selectMyHostings = state => {
 
 };
 
+export const selectMyReservations = state => {
+
+    const allReservations = Object.values(state.entities.reservations);
+    const currentUser = state.session.id;
+    return allReservations.filter(reservation => {
+        if(reservation.userId === currentUser){
+            return reservation;
+        }
+    }); 
+
+};
+
 export const selectOnLocation = (state,location) => {
     const allListings = Object.values(state.entities.listings);
     return allListings.filter(listing => {
