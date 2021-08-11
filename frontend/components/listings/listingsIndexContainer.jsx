@@ -11,10 +11,6 @@ class ListingsIndex extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchListings();
-    // }
-
     handleClick(listing){
         return (e) => {
             e.preventDefault();
@@ -27,6 +23,7 @@ class ListingsIndex extends React.Component{
         let listings = this.props.listings.map((listing,idx) => {
             return (
                 <div className='listing-item' key={`listing${idx}`} onClick={this.handleClick(listing)}>
+                    <img src={listing.photoUrl}/>
                     <div>Title: {listing.title}</div>
                     <div>Guests: {listing.maxGuests}</div>
                     <div>{listing.propertyType}</div>

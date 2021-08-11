@@ -35,7 +35,7 @@ Listing.create!(user_id: 1, property_type: 'Studio', property_type_group: 'Apart
         Modern and cozy studio with living room, kitchenette and sleeping nook with a comfortable queen bed.')
 
 Listing.create!(user_id: 1, property_type: 'Residential Home', property_type_group: 'House',
-        privacy_type: 'Entire Home', price: 95, location: '99 Delgado Pl, San Francisco, California, United States',
+        privacy_type: 'Entire Home', price: 95, location: '1000 Cayuga Ave, San Francisco, California, United States',
         max_guests: 2, num_bathrooms: 1, num_bedrooms:1,
         num_beds: 1, title: 'Stunning views from the Richmond Crows Nest', amenities:'In door fireplace, Wifi, Washer, Essentials, Patio or balcony, Long term stays allowed',
         description: 'Nestled in between Land End, Ocean Beach and Golden Gate Park, the apartment is the perfect space to explore from, and come back to recharge.

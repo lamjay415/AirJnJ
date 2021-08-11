@@ -11,12 +11,12 @@ class Api::ListingsController < ApplicationController
     end
 
     def index
-        @listings = Listing.all
+        @listings = Listing.with_attached_photos.all
         render :index
     end
 
     def show
-        @listing = Listing.find(params[:id])
+        @listing = Listing.with_attached_photos.find(params[:id])
         render :show
     end
 
@@ -44,7 +44,7 @@ class Api::ListingsController < ApplicationController
     def listing_params
         params.require(:listing).permit(:user_id, :property_type, :property_type_group,
              :privacy_type, :price, :location,:max_guests, :num_bathrooms, :num_bedrooms,
-            :num_beds, :title, :amenities, :description)
+            :num_beds, :title, :amenities, :description, photos: [])
     end
 
 end

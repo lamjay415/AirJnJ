@@ -19,12 +19,17 @@ class ListingDetail extends React.Component{
             return null;
         }
         const currentUser = this.props.currentUser;
+        const photos = listing.photoUrls.map((url,idx) => {
+            return (
+                <img src={url} key={`pic${idx}`} height='300'/>
+            )
+        });
         return(
             <div>
                 <Header/>
                 <div className='listing-body'>
                     <div className='listing-title'>{listing.title}</div>
-                    <div>Pics</div>
+                    <div>{photos}</div>
                     <div className='listing-info'>
                         <div className='listing-description'>
                             <div>Description: {listing.description}</div>

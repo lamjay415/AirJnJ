@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { $CombinedState } from 'redux';
 import FormCompleted from '../popup/formCompleted';
 
 class ListingForm extends React.Component{
@@ -9,17 +10,62 @@ class ListingForm extends React.Component{
         this.state = this.props.listing;
         this.state.completed = false;
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleFile = this.handleFile.bind(this);
     }
 
     handleSubmit(e){
         e.preventDefault();
-        const listing = Object.assign({}, this.state);
-        this.props.processForm(listing).then(() => this.setState({completed:true}));
+        const formData = new FormData();
+        const {photos} = this.state;
+        formData.append('listing[user_Id]', this.state.user_id);
+        formData.append('listing[title]', this.state.title);
+        formData.append('listing[description]', this.state.description);
+        formData.append('listing[property_type_group]', this.state.propertyTypeGroup);
+        formData.append('listing[property_type]', this.state.propertyType);
+        formData.append('listing[privacy_type]', this.state.privacyType);
+        formData.append('listing[price]', this.state.price);
+        formData.append('listing[location]', this.state.location);
+        formData.append('listing[max_guests]', this.state.maxGuests);
+        formData.append('listing[num_bedrooms]', this.state.numBedrooms);
+        formData.append('listing[num_bathrooms]', this.state.numBathrooms);
+        formData.append('listing[num_beds]', this.state.numBeds);
+        formData.append('listing[amenities]', this.state.amenities);
+        for(let i = 0; i < photos.length; i++){
+            formData.append("listing[photos][]", photos[i]);
+        }
+        console.log(this.state);
+        $.ajax({
+            url: '/api/listings',
+            method: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false
+        }).then((() => this.setState({completed:true})));
+        // const listing = Object.assign({}, this.state);
+        // this.props.processForm(listing).then(() => this.setState({completed:true}));
     }
 
 
     update(field) {
         return e => this.setState({[field]: e.currentTarget.value});
+    }
+
+    handleFile(e){
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        const preview = document.querySelector('img');
+        let photos = this.state.photos;
+        reader.onloadend = () => {
+            photos.push(file);
+            this.setState({ imageUrl: reader.result, photos: photos });
+            preview.src = reader.result;
+            preview.hidden = false;
+        };
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            this.setState({ imageUrl: "", photos: this.state.photos });
+        }
     }
 
     render(){
@@ -92,6 +138,14 @@ class ListingForm extends React.Component{
                                 value={this.state.description}
                                 onChange={this.update('description')}
                             />
+                            <img src="" height="100" hidden/>
+                            {this.props.formType==='Create Listing' ? (
+                                <input 
+                                    type ="file"
+                                    onChange={this.handleFile}
+                                    multiple
+                                />
+                            ) : null }
                             <input type = "submit" value={this.props.formType} className='form-button'/>
                         </form>
                     </div>

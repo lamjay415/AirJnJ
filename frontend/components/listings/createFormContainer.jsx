@@ -17,7 +17,8 @@ const mSTP = (state) => ({
         numBathrooms: 0,
         amenities: '',
         title: '',
-        description: ''
+        description: '',
+        photos: []
     },
     formType: 'Create Listing'
 });

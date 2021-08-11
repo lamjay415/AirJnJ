@@ -318,10 +318,9 @@ body {
 
 .profile-pic {
   border: 1px solid white;
-  border-radius: 50px;
-  width: 30px;
-  height: 30px;
-  background-image: url("https://img.icons8.com/ios-glyphs/30/000000/user--v1.png");
+  width: 24px;
+  height: 24px;
+  /* background-image: url("../images/user.jpg"); */
   background-repeat: no-repeat;
 }
 
@@ -431,6 +430,10 @@ body {
   font-weight: 300;
 }
 
+.listing-form > img {
+  width: min-content;
+}
+
 .listing-form > .form-button {
   font-weight: 600;
   width: 235px;
@@ -498,62 +501,4 @@ body {
   animation-name: fadeDown;
   animation-duration: 1s;
   animation-fill-mode: forwards;
-}
-
-/* SEARCH BUTTON */
-.searchBar-container {
-  font-weight: 300;
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid lightgrey;
-  border-radius: 20px;
-  background-color: white;
-  width: 50%;
-  margin-top: 30px;
-  padding: 13px 10px;
-  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.35);
-  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.35);
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.35);
-}
-
-.search-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(255, 56, 92);
-  color: white;
-  border-radius: 20px;
-  padding: 10px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.search-button:hover {
-  cursor: pointer;
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  height: 20px;
-  width: 75%;
-}
-
-.search-div {
-  width: 100%;
-}
-
-.search-text {
-  font-weight: 600;
-  font-size: small;
-}
-
-.pac-container {
-  width: 60%;
-  border-radius: 20px;
-  margin-top: 20px;
-}
-
-.pac-item {
-  padding: 5px;
 }

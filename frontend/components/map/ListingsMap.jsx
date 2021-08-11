@@ -6,9 +6,21 @@ class ListingsMap extends React.Component{
 
     constructor(props){
         super(props);
+        this.initMap = this.initMap.bind(this);
     }
 
     componentDidMount(){
+        this.initMap();
+    }
+
+    // componentDidUpdate(prevProps){
+    //     this.MarkerManager.updateMarkers(this.props.listings);
+    //     if(this.props.location !== prevProps.props.location){
+    //         this.initMap();
+    //     }
+    // }
+
+    initMap(){
         let geocoder = new google.maps.Geocoder();
         let that = this;
         const searchLocation = this.props.location.pathname.slice(8);
@@ -28,10 +40,6 @@ class ListingsMap extends React.Component{
             that.MarkerManager.updateMarkers(that.props.listings);
         });
     }
-
-    // componentDidUpdate(){
-    //     this.MarkerManager.updateMarkers(this.props.listings);
-    // }
 
     handleMarkerClick(listing) {
         this.props.history.push(`/listings/${listing.id}`);
