@@ -1,5 +1,5 @@
 import { Link,withRouter } from "react-router-dom";
-import React from 'React';
+import React from 'react';
 
 const HomeContent = (props) => (
     <div className='home-body-container'>
