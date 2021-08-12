@@ -54,12 +54,23 @@
 }
 
 .listing-top {
-  font-size: x-large;
-  font-weight: bold;
+  font-size: large;
+  font-weight: 400;
   margin-bottom: 15px;
 }
 
-.listing-mid {
+.listing-mid  > *{
   display: flex;
+  padding: 5px 0;
+  font-size: small;
   flex-direction: column;
+}
+
+.listing-bot {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.listing-price {
+  font-weight: 600;
 }

@@ -10,12 +10,11 @@ const reservationReducer = (state={}, action) => {
             return Object.assign({}, state, {[action.reservation.id] : action.reservation});
         case REMOVE_RESERVATION:
             let nextState = Object.assign({}, state);
-            delete nextState[action.listingId];
+            delete nextState[action.reservationId];
             return nextState;
         default:
             return state;
     }
-
 }
 
 export default reservationReducer;

@@ -2,7 +2,7 @@ import * as ReserveApi from '../util/reservation_api_util';
 
 export const RECEIVE_ALL_RESERVATIONS = 'RECEIVE_ALL_RESERVATIONS';
 export const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION';
-export const REMOVE_RESERVATION = 'EMOVE_RESERVATION';
+export const REMOVE_RESERVATION = 'REMOVE_RESERVATION';
 
 const receiveAllReservations = reservations => ({
     type: RECEIVE_ALL_RESERVATIONS,

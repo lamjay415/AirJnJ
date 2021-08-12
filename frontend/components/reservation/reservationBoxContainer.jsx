@@ -14,7 +14,7 @@ class ReservationBox extends React.Component{
             endDate: '',
             price: this.props.listing.price,
             total: '',
-            guests: ''
+            guests: 1
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,23 +26,47 @@ class ReservationBox extends React.Component{
         return Math.round(Math.abs((startDate - endDate)/ day))+1;
     }
 
+    getTotal(days,price){
+        return days * price;
+    }
+
     handleSubmit(e){
         e.preventDefault();
         const reservation = Object.assign({}, this.state);
-        reservation.total = this.calculateDays(reservation.startDate, reservation.endDate) * reservation.price;
+        reservation.total = this.getTotal(this.calculateDays(reservation.startDate, reservation.endDate), reservation.price);
         this.props.createReservation(reservation).then(()=> this.props.history.push('/trips'));
     }
 
     update(field) {
-        return e => this.setState({
-          [field]: e.currentTarget.value
-        });
+        return e => {
+            this.setState({
+                [field]: e.currentTarget.value
+            });
+        };
     }
 
     render(){
+        let date = new Date();
+        let month = date.getMonth()+1
+        let day = date.getDate();
+        month < 10 ? month = '0'+ month : month;
+        day < 10 ? day = '0' + day : day;
+        let today = date.getFullYear() + '-' + month + '-' + day;
+        let pricing;
+        if(this.state.startDate !== '' && this.state.endDate !== ''){
+            let numDays = this.calculateDays(this.state.startDate,this.state.endDate);
+            pricing = (
+                <div className='res-pricing'>
+                    <div className='res-calc'>
+                        {numDays} nights x ${this.state.price}
+                    </div>
+                    <div className='res-total'>Total: ${this.getTotal(numDays,this.state.price)}</div>
+                </div>
+            )
+        }
         return(
             <div className='reservation-box'>
-                <div className='res-price'>${this.state.price} <span className='res-input'>/ day</span></div>
+                <div className='res-price'>${this.state.price} <span className='res-input'>/ night</span></div>
                 <form onSubmit={this.handleSubmit} className='res-form-cont'>
                     <div className='res-form'>
                         <div className='res-date'>
@@ -51,6 +75,7 @@ class ReservationBox extends React.Component{
                                     type='date'
                                     value={this.state.startDate}
                                     onChange={this.update('startDate')}
+                                    min={today}
                                 />
                             </div>
                             
@@ -59,6 +84,7 @@ class ReservationBox extends React.Component{
                                     type='date'
                                     value={this.state.endDate}
                                     onChange={this.update('endDate')}
+                                    min={this.state.startDate}
                                 />
                             </div>
                         </div>
@@ -70,6 +96,7 @@ class ReservationBox extends React.Component{
                             placeholder='1 guest'
                         />
                         </div>
+                        {pricing}
                     <input 
                         type='submit'
                         value='Reserve'

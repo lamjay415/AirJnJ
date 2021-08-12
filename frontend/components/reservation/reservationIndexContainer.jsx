@@ -4,6 +4,7 @@ import { fetchReservations } from '../../actions/reservation_actions'
 import { connect } from 'react-redux';
 import ReservationDetail from './reservationDetail';
 import { fetchListing } from '../../util/listing_api_util';
+import SecondaryHeader from '../SecondaryHeader'
 
 class ReservationIndex extends React.Component{
 
@@ -27,10 +28,18 @@ class ReservationIndex extends React.Component{
             )
         });
 
+        const emptyPage = (
+            <div class='empty-trips-cont'>
+                :(
+            </div>
+        )
         return(
-            <div className='rev-index-container'>
-                <div>Upcoming plans</div>
-                {reservationsLists}
+            <div className='rev-index-page'>
+                <SecondaryHeader/>
+                <div className='rev-index-container'>
+                    <div className='rev-header'>Upcoming Trips</div>
+                    {reservationsLists.length === 0 ? emptyPage : reservationsLists}
+                </div>
             </div>
         )
     }

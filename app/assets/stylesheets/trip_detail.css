@@ -1,0 +1,71 @@
+.trip-detail-container {
+  height: 250px;
+  margin-bottom: 50px;
+  border: 1px solid lightgrey;
+  transition: 0.5s
+}
+
+.trip-detail-container:hover {
+  box-shadow: 0 0 10px lightgrey;
+  transition: 0.5s;
+}
+
+.trip-detail-header {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 30%;
+}
+
+.trip-top {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px 0 15px;
+}
+
+.trip-date {
+  display: flex;
+  font-weight: 400;
+}
+
+.trip-listing {
+  height: 70%;
+}
+
+.trip-bot {
+  font-weight: 300;
+  /* font-size: small; */
+  padding-left: 15px;
+  padding-bottom: 10px;
+}
+
+.trip-listing > .listing-item {
+  height: 100%;
+  padding: 0;
+  border-top: none;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.trip-listing > .listing-item > .listing-pic {
+  border-radius: 0;
+  width: 40%;
+  height: 100%;
+}
+
+.trip-cancel {
+  background-color: rgb(255, 101, 129);
+  color: white;
+  padding: 10px;
+  border: 1px solid rgb(255, 101, 129);
+  border-radius: 10px;
+}
+
+.trip-cancel:hover {
+  cursor: pointer;
+  color: rgb(255, 101, 129);
+  background-color: white;
+  border: 1px solid rgb(255, 101, 129);
+  transition: 0.5s;
+}

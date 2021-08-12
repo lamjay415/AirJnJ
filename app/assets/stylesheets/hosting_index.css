@@ -1,0 +1,17 @@
+.hostings-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  color: rgb(85, 80, 80);
+}
+
+.hostings-body {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hostings-header {
+  font-size: xx-large;
+}

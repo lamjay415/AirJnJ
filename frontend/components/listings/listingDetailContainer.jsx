@@ -48,7 +48,7 @@ class ListingDetail extends React.Component{
                             <ReservationBoxContainer listing={listing} 
                             currentUser={currentUser}
                             />
-                        </div>
+                        </div>  
                     </div>
                 </div>
             </div>

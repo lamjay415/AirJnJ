@@ -44,33 +44,43 @@
 }
 
 .res-label {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
-.res-label > res-input{
-    padding: 5px 0;
+.res-label > res-input {
+  padding: 5px 0;
 }
 
-.form-button{
-    padding: 5px 0;
+.form-button {
+  padding: 5px 0;
 }
 
 .res-form-cont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .res-form-cont > .form-button {
-    text-align: center;
-    font-size: large;
-    width: 99%;
-    padding: 12px 0;
-    margin-top: 20px;
-    height:initial;
-    border-radius: 10px;
+  text-align: center;
+  font-size: large;
+  width: 99%;
+  padding: 12px 0;
+  margin-top: 20px;
+  height: initial;
+  border-radius: 10px;
 }
 
-.res-price{
-    padding-bottom: 20px
+.res-price {
+  padding-bottom: 20px;
+}
+
+.res-pricing {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid lightgrey;
+  justify-content: space-between;
+  font-size: large;
 }

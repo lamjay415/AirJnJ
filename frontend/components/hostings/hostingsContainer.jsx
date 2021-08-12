@@ -24,8 +24,13 @@ class HostingIndex extends React.Component{
         return (
             <div>
                 <SecondaryHeader/>
-                <div>
-                    {hostings}
+                <div className='hostings-container'>
+                    <div className='hostings-body'>
+                        <div className='hostings-header'>Review your listings</div>
+                        <div className='hostings-items'>
+                            {hostings}
+                        </div>
+                    </div>
                 </div>
             </div>
         )

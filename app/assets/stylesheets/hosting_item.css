@@ -1,0 +1,61 @@
+.hosting-item {
+  display: flex;
+  padding: 20px 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.hosting-first {
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.hosting-details > .listing-item {
+  border-top: none;
+  height: 80%;
+}
+
+.hosting-details > .listing-item:hover {
+  box-shadow: 0 0 10px lightgrey;
+  transition: 1s;
+}
+
+.hosting-details > .listing-item > .listing-pic {
+  height: 80%;
+}
+
+.hosting-details > .listing-item > .listing-detail {
+  height: 115%;
+  justify-content: space-between;
+}
+
+.hosting-details > .listing-item > .listing-detail > .listing-bot {
+  padding-top: 30px;
+}
+
+.hosting-second {
+  /* width:20%; */
+}
+
+.hosting-third {
+  /* width:20%; */
+}
+
+.hosting-delete {
+  background-color: rgb(255, 101, 129);
+  color: white;
+  padding: 10px;
+  border: 1px solid rgb(255, 101, 129);
+  border-radius: 10px;
+}
+
+.hosting-delete:hover {
+  cursor: pointer;
+  color: rgb(255, 101, 129);
+  background-color: white;
+  border: 1px solid rgb(255, 101, 129);
+  transition: 0.5s;
+}
