@@ -176,6 +176,7 @@ table {
 }
 
 body {
+  overflow-x: hidden;
   width: 100vw;
 }
 /* LOGIN/SIGNUP FORM*/
@@ -442,8 +443,9 @@ body {
 }
 
 .map-container {
-  position: fixed;
-  height: 93vh;
+  position: sticky;
+  /* top:10%; */
+  height: 91.5vh;
   width: 55%;
 }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {createReservation, deleteReservation} from '../../actions/reservation_actions';
+import { withRouter } from 'react-router';
 
 class ReservationBox extends React.Component{
 
@@ -29,7 +30,7 @@ class ReservationBox extends React.Component{
         e.preventDefault();
         const reservation = Object.assign({}, this.state);
         reservation.total = this.calculateDays(reservation.startDate, reservation.endDate) * reservation.price;
-        this.props.createReservation(reservation).then(()=> console.log('dates have been reserved'));
+        this.props.createReservation(reservation).then(()=> this.props.history.push('/trips'));
     }
 
     update(field) {
@@ -87,5 +88,5 @@ const mDTP = dispatch => ({
     createReservation: reservation => dispatch(createReservation(reservation))
 });
 
-export default connect(null, mDTP)(ReservationBox);
+export default withRouter(connect(null, mDTP)(ReservationBox));
 

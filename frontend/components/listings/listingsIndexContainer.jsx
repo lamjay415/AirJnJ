@@ -24,18 +24,20 @@ class ListingsIndex extends React.Component{
             return (
                 <div className='listing-item' key={`listing${idx}`} onClick={this.handleClick(listing)}>
                     <img src={listing.photoUrls[0]} className='listing-pic'/>
-                    <div>
-                        <div className='listing-info'>
-                        <div className='list-title'>{listing.title}</div>
-                        <div className='listings-stats'>
-                            <div>{listing.maxGuests} guests · </div>
-                            {/* <div>{listing.propertyType}</div> */}
-                            <div>{listing.numBeds} beds · </div>
-                            <div>{listing.numBathrooms} bath</div>
+                    <div className='listing-detail'>
+                        <div className='listing-top-and-mid'> 
+                            <div className='listing-top'>
+                                <div>title</div>
+                            </div>
+                            <div className='listing-mid'>
+                                <div className='listing-mid-text-1'>3 guest</div>
+                                <div className='listing-mid-text-2'>kitchen</div>
+                            </div>
                         </div>
-                        <div>{listing.amenities}</div>
-                        <div>${listing.price} / night</div>
-                    </div>
+                       
+                        <div className='listing-bot'>
+                            <div>test</div>
+                        </div>
                     </div>
                 </div>
             );

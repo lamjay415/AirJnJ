@@ -19,7 +19,7 @@ class ListingDetail extends React.Component{
         if(listing === undefined){
             return null;
         }
-
+        
         const host = this.props.users[this.props.listing.userId]
         const currentUser = this.props.currentUser;
         const photos = listing.photoUrls.map((url,idx) => {
