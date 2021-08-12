@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting/greeting_container';
 import Header from './Header';
 import SearchBarContainer from './search/searchBarContainer';
+import HomeContent from './home/homeContent';
+import Footer from './Footer';
 
 const Home = () => (
 
@@ -13,7 +15,8 @@ const Home = () => (
             <Header/>
             <SearchBarContainer/>
         </div>
-        
+        <HomeContent/>
+        <Footer/>
     </div>
 
 )
