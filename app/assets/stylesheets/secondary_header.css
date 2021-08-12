@@ -1,0 +1,53 @@
+.secondary-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    width: 100vw;
+    padding-bottom: 15px;
+    /* border-bottom: 1px solid lightgray; */
+    box-shadow: 0 0 10px lightgray;
+}
+
+.secondary-header-container > .logo {
+    font-size: x-large;
+  color: rgb(255, 101, 129);
+}
+
+.secondary-header-container > .user-container {
+  color: rgb(80, 80, 80);
+}
+
+.secondary-header-container > .user-container > .link {
+  color: rgb(80, 80, 80);
+  text-decoration: none;
+}
+
+.secondary-header-container > .user-container > .menu-container > .menu-button{
+  border: 1px solid lightgrey;
+}
+.secondary-header-container
+  > .user-container
+  > .menu-container
+  > .menu-button:hover {
+  /* -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25); */
+  box-shadow: 0 0 10px lightgray;
+  transition: 0.5s;
+}
+
+.secondary-header-container > .user-container > .menu-container > .menu {
+  border: 1px solid lightgrey;
+  box-shadow: 0 0 10px lightgray;
+  border-radius: 10px;
+}
+
+.secondary-header-container > .user-container > .link {
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.secondary-header-container > .user-container > .link:hover {
+    background-color: whitesmoke;
+
+}

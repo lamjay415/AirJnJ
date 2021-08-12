@@ -1,0 +1,53 @@
+.listing-item {
+  border-top: 1px solid lightgrey;
+  color: black;
+  font-weight: 300;
+  padding: 5px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+}
+
+
+.listing-item:hover {
+  cursor: pointer;
+}
+
+.listings-page-body {
+  display: flex;
+}
+
+.listings-container {
+  width: 45%;
+}
+
+.listings-header {
+  height: 10%;
+  margin: auto;
+  padding: 10px;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.listing-info {
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listings-stats {
+  display: flex;
+}
+
+.listing-pic {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: 10px;
+}
+
+.list-title{
+    font-size: large;
+    font-weight: 400;
+}

@@ -47,10 +47,10 @@ class Greeting extends React.Component{
         }
 
         return (
-            <div>
+            <div className='menu-container'>
                 <div className='menu-button'>
                     <div className='hamburger'></div>
-                    <div className='profile-pic'></div>
+                    <img src='https://a0.muscache.com/defaults/user_pic-50x50.png?v=3' className='profile-pic'/>
                 </div>
                 {currentUser ? userGreeting() : defaultGreeting()}
             </div>

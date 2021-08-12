@@ -41,26 +41,34 @@ class ReservationBox extends React.Component{
     render(){
         return(
             <div className='reservation-box'>
-                <div>${this.state.price} / day</div>
-                <form onSubmit={this.handleSubmit}>
-                    <div>CHECK-IN</div>
-                    <input
-                        type='date'
-                        value={this.state.startDate}
-                        onChange={this.update('startDate')}
-                    />
-                    <div>CHECK-OUT</div>
-                    <input
-                        type='date'
-                        value={this.state.endDate}
-                        onChange={this.update('endDate')}
-                    />
-                    <div>Guests</div>
-                    <input
-                        type='number'
-                        value={this.state.guests}
-                        onChange={this.update('guests')}
-                    />
+                <div className='res-price'>${this.state.price} <span className='res-input'>/ day</span></div>
+                <form onSubmit={this.handleSubmit} className='res-form-cont'>
+                    <div className='res-form'>
+                        <div className='res-date'>
+                            <div className='res-label'>CHECK-IN
+                                <input className='res-input'
+                                    type='date'
+                                    value={this.state.startDate}
+                                    onChange={this.update('startDate')}
+                                />
+                            </div>
+                            
+                            <div className='res-label'>CHECK-OUT
+                                <input className='res-input'
+                                    type='date'
+                                    value={this.state.endDate}
+                                    onChange={this.update('endDate')}
+                                />
+                            </div>
+                        </div>
+                        <div className='res-label'>Guests</div>
+                        <input className='res-input'
+                            type='number'
+                            value={this.state.guests}
+                            onChange={this.update('guests')}
+                            placeholder='1 guest'
+                        />
+                        </div>
                     <input 
                         type='submit'
                         value='Reserve'

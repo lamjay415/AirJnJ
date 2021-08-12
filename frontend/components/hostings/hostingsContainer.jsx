@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { deleteListing, fetchListings } from '../../actions/listing_actions';
 import { selectMyHostings } from '../../reducers/selectors';
-import Header from '../Header';
+import SecondaryHeader from '../SecondaryHeader'
 import HostingDetail from './hostingDetail';
 
 class HostingIndex extends React.Component{
@@ -23,7 +23,7 @@ class HostingIndex extends React.Component{
         });
         return (
             <div>
-                <Header/>
+                <SecondaryHeader/>
                 <div>
                     {hostings}
                 </div>

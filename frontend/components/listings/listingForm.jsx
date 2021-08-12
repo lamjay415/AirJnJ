@@ -9,6 +9,7 @@ class ListingForm extends React.Component{
         super(props)
         this.state = this.props.listing;
         this.state.completed = false;
+        this.state.previewPics = [];
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
     }
@@ -33,7 +34,6 @@ class ListingForm extends React.Component{
         for(let i = 0; i < photos.length; i++){
             formData.append("listing[photos][]", photos[i]);
         }
-        console.log(this.state);
         $.ajax({
             url: '/api/listings',
             method: 'POST',
@@ -53,13 +53,12 @@ class ListingForm extends React.Component{
     handleFile(e){
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        const preview = document.querySelector('img');
+        // const preview = document.querySelector('img');
         let photos = this.state.photos;
         reader.onloadend = () => {
             photos.push(file);
             this.setState({ imageUrl: reader.result, photos: photos });
-            preview.src = reader.result;
-            preview.hidden = false;
+            this.createPreview(reader.result);
         };
         if (file) {
             reader.readAsDataURL(file);
@@ -68,7 +67,14 @@ class ListingForm extends React.Component{
         }
     }
 
+    createPreview(src){
+        let previews = this.state.previewPics;
+        previews.push(src);
+        this.setState({previewPics: previews});
+    }
+
     render(){
+
         return (
             <div className='listing-form-container'>
                 {this.state.completed ? <FormCompleted formType={this.props.formType}/> : null}
@@ -138,7 +144,11 @@ class ListingForm extends React.Component{
                                 value={this.state.description}
                                 onChange={this.update('description')}
                             />
-                            <img src="" height="100" hidden/>
+                            <div>
+                            {this.state.previewPics.map((src,indx)=>{
+                                return <img src={src} key={`img${indx}`} height='75'/>
+                            })}
+                            </div>
                             {this.props.formType==='Create Listing' ? (
                                 <input 
                                     type ="file"

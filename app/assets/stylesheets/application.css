@@ -320,8 +320,9 @@ body {
   border: 1px solid white;
   width: 24px;
   height: 24px;
-  /* background-image: url("../images/user.jpg"); */
-  background-repeat: no-repeat;
+  border-radius: 50px;
+  /* background-image: url("./user.png");
+  background-repeat: no-repeat; */
 }
 
 .session-errors > * {
@@ -364,9 +365,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url(https://a0.muscache.com/im/pictures/e4a2a61c-589f-4e49-b3b8-968a6bc23389.jpg?im_w=2560);
+  background-image: url(https://a0.muscache.com/im/pictures/57b9f708-bb12-498c-bc33-769f8fc43e63.jpg?im_w=2560);
   height: 600px;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .link {
@@ -439,38 +441,10 @@ body {
   width: 235px;
 }
 
-.listing-item {
-  border-top: 1px solid lightgrey;
-  /* border-bottom: 1px solid lightgrey; */
-  color: black;
-  font-weight: 300;
-  padding: 5px;
-  /* margin: 10px; */
-}
-
-.listing-item:hover {
-  cursor: pointer;
-}
-
-.listings-page-body {
-  display: flex;
-}
-
-.listings-container {
-  width: 45%;
-}
 .map-container {
   position: fixed;
-  height: 95vh;
+  height: 93vh;
   width: 55%;
-}
-
-.listings-page > .header-container > .logo {
-  color: rgb(255, 101, 129);
-}
-
-.listings-page > .header-container > .user-container {
-  color: rgb(80, 80, 80);
 }
 
 /* POP UP */

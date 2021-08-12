@@ -1,0 +1,76 @@
+.reservation-box {
+  font-weight: 300;
+  font-size: small;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  padding: 20px;
+  width: 27vw;
+  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+.res-price {
+  font-size: large;
+  font-weight: bold;
+}
+
+.res-form {
+  border: 1px solid lightgray;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.res-label {
+  font-weight: 600;
+}
+.res-input {
+  font-weight: 300;
+  border: none;
+}
+
+.res-date {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+}
+
+.res-date > * {
+  padding: 5px;
+}
+
+.res-date div:last-child {
+  border-left: 1px solid lightgray;
+  padding-left: 7px;
+}
+
+.res-label {
+    padding: 5px 0;
+}
+
+.res-label > res-input{
+    padding: 5px 0;
+}
+
+.form-button{
+    padding: 5px 0;
+}
+
+.res-form-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.res-form-cont > .form-button {
+    text-align: center;
+    font-size: large;
+    width: 99%;
+    padding: 12px 0;
+    margin-top: 20px;
+    height:initial;
+    border-radius: 10px;
+}
+
+.res-price{
+    padding-bottom: 20px
+}
