@@ -19,10 +19,10 @@ const HomeContent = (props) => (
                     <div className='link-text'>New York</div>
                 </div>
                 <div className='link-div'>
-                    <img className='quick-link' onClick={() => console.log(props.history.push('/search/Hawaii'))}
+                    <img className='quick-link' onClick={() => console.log(props.history.push('/search/Honolulu'))}
                         src='https://a0.muscache.com/im/pictures/73ab906b-eea1-425d-9fea-bf2c79d86556.jpg?im_q=medq&im_w=240'
                     />
-                    <div className='link-text'>Hawaii</div>
+                    <div className='link-text'>Honolulu</div>
                 </div>
             </div>
         </div>
