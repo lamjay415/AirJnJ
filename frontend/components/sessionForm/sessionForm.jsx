@@ -16,6 +16,7 @@ class SessionForm extends React.Component{
             birthdate: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.demoLogin = this.demoLogin.bind(this);
     }
 
     handleSubmit(e){
@@ -44,6 +45,10 @@ class SessionForm extends React.Component{
               ))}
             </div>
           );
+    }
+
+    demoLogin(){
+        this.props.login({email: 'admin', password: 'password'}).then(this.props.closeModal);
     }
 
     render(){
@@ -78,6 +83,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('password')}
                         />
                         <input type = "submit" value={this.props.formType} className='form-button'/>
+                        <div className='demo-login-div' onClick={this.demoLogin}>Login as Demo</div>
                         {this.props.loginForm}
                     </form>
             )
@@ -95,6 +101,7 @@ class SessionForm extends React.Component{
                         onChange={this.update('password')}
                     />
                     <input type = "submit" value={this.props.formType} className='form-button'/>
+                    <div className='demo-login-div' onClick={this.demoLogin}>Login as Demo</div>
                     {this.props.signupForm}
                 </form>
             )

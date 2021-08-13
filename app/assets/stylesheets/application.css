@@ -445,7 +445,7 @@ body {
 .map-container {
   position: sticky;
   /* top:10%; */
-  height: 91.5vh;
+  height: 93vh;
   width: 55%;
 }
 
@@ -477,4 +477,21 @@ body {
   animation-name: fadeDown;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+}
+
+.demo-login-div {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 5px;
+  width: 234px;
+  color: rgb(222, 20, 98);
+  border: none;
+  font-weight: 600;
+  padding: 7px 0;
+}
+
+.demo-login-div:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }

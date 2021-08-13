@@ -74,3 +74,11 @@
 .listing-price {
   font-weight: 600;
 }
+
+.no-listings-container{
+  padding: 15px;
+}
+
+.no-listings-container > *{
+  padding: 10px;
+}

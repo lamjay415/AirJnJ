@@ -1,0 +1,27 @@
+@keyframes fadeDown {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -50px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.require-login-popup {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  top: 15px;
+  left: 25%;
+  width: 50%;
+  height: 25px;
+  border: 1px solid rgb(183, 235, 143);
+  background-color: rgb(246, 255, 237);
+  padding: 8px;
+  font-weight: 300;
+  animation-name: fadeDown;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}

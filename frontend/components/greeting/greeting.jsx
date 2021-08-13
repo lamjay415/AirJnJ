@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { login } from '../../actions/session_actions';
+import { connect } from 'react-redux';
 
 class Greeting extends React.Component{
 
     constructor(props){
         super(props);
-        // this.toggleMenu = this.toggleMenu.bind(this);
     }
 
     componentDidMount(){
@@ -60,3 +61,4 @@ class Greeting extends React.Component{
 }
 
 export default Greeting;
+

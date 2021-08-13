@@ -16,6 +16,7 @@ const mDTP = (dispatch, ownProps) => ({
             or signup here
         </div>
     ),
+    login: user => dispatch(login(user)),
     closeModal: () => dispatch(closeModal())
 });
 
