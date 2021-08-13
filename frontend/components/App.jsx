@@ -9,6 +9,7 @@ import ListingsPageContainer from './ListingsPageContainer';
 import ListingDetailContainer from './listings/listingDetailContainer';
 import EditFormContainer from './listings/editFormContainer';
 import ReservationIndexContainer from './reservation/reservationIndexContainer';
+import Modal from './modal/modal';
 
 const App = () => (
     <div>

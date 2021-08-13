@@ -4,6 +4,7 @@ import { fetchListing } from '../../actions/listing_actions';
 import { fetchUser } from '../../actions/user_actions'
 import SecondaryHeader from '../SecondaryHeader';
 import ReservationBoxContainer from '../reservation/reservationBoxContainer';
+import Modal from '../modal/modal';
 class ListingDetail extends React.Component{
 
     constructor(props){
@@ -31,6 +32,7 @@ class ListingDetail extends React.Component{
         return(
             <div>
                 <SecondaryHeader/>
+                <Modal/>
                 <div className='listing-page'>
                     <div className='listing-body'>
                         <div className='listing-title'>{listing.title}</div>

@@ -28,8 +28,8 @@
   height: 130px;
 }
 
-.link-div:hover{
-    cursor: pointer;
+.link-div:hover {
+  cursor: pointer;
 }
 
 .quick-link {
@@ -38,6 +38,10 @@
   border: 1px solid lightgrey;
   border-radius: 10px;
   object-fit: cover;
+}
+
+.quick-link:hover {
+  box-shadow: 0 0 10px lightgrey;
 }
 
 .link-text {
