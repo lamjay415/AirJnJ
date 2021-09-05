@@ -14,10 +14,6 @@
   justify-content: center;
 }
 
-.listing-info {
-  display: flex;
-}
-
 .listing-title {
   font-size: x-large;
   font-weight: 400;
@@ -52,6 +48,7 @@
 .listing-info {
   display: flex;
   margin-top: 30px;
+  margin-bottom: 100px;
 }
 
 .listing-description {

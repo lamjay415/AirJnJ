@@ -29,7 +29,7 @@ class ReservationIndex extends React.Component{
         });
 
         const emptyPage = (
-            <div class='empty-trips-cont'>
+            <div className='empty-trips-cont'>
                 :(
             </div>
         )

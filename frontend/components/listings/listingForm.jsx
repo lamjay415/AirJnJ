@@ -47,7 +47,9 @@ class ListingForm extends React.Component{
 
 
     update(field) {
-        return e => this.setState({[field]: e.currentTarget.value});
+        return e => {
+            this.setState({[field]: e.currentTarget.value}, ()=>console.log(this.state));
+        };
     }
 
     handleFile(e){
@@ -85,10 +87,18 @@ class ListingForm extends React.Component{
                 <div className='form-side-container'>
                     <form onSubmit={this.handleSubmit} className='listing-form'>
                             <div>Property Type Group: </div>
-                            <input type="text"
+                            {/* <input type="text"
                                 value={this.state.propertyTypeGroup}
                                 onChange={this.update('propertyTypeGroup')}
-                            />
+                            /> */}
+                            <select defaultValue='--Select One--' onChange={this.update('propertyTypeGroup')}>
+                                {/* <option value='' disabled selected>--Select One--</option> */}
+                                <option value='Apartment'>Apartment</option>
+                                <option value='House'>House</option>
+                                <option value='Secondary Unit'>Secondary Unit</option>
+                                <option value='Unique Space'>Unique Space</option>
+                                <option value='Hotel/Motel'>Hotel/Motel</option>
+                            </select>
                             <div>Property Type: </div>
                             <input type="text"
                                 value={this.state.propertyType}
