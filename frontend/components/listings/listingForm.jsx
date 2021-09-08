@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { $CombinedState } from 'redux';
 import FormCompleted from '../popup/formCompleted';
+import Select from 'react-select';
 
 class ListingForm extends React.Component{
 
@@ -34,13 +34,15 @@ class ListingForm extends React.Component{
         for(let i = 0; i < photos.length; i++){
             formData.append("listing[photos][]", photos[i]);
         }
-        $.ajax({
-            url: '/api/listings',
-            method: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false
-        }).then((() => this.setState({completed:true})));
+        if(!this.state.completed){
+            $.ajax({
+                url: '/api/listings',
+                method: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false
+            }).then((() => this.setState({completed:true})));
+        }
         // const listing = Object.assign({}, this.state);
         // this.props.processForm(listing).then(() => this.setState({completed:true}));
     }
@@ -76,7 +78,55 @@ class ListingForm extends React.Component{
     }
 
     render(){
+        const propTypeGroupOpts = [
+            {value:'Apartment', label:'Apartment'}, 
+            {value:'House', label:'House'}, 
+            {value:'Secondary Unit', label:'Secondary Unit'}, 
+            {value:'Unique Space', label:'Unique Space'}, 
+            {value:'Hotel/Motel', label:'Hotel/Motel'}
+        ];
 
+        const propTypeOpts = {
+            'Apartment': [{
+                value: 'Rental Unit', label: 'Rental Unit'},
+                {value: 'Condo', label: 'Condo'},
+                {value: 'Loft', label: 'Loft'},
+                {value: 'Studio', label: 'Studio'}],
+            'House': [
+                {value: 'Residential Home', label: 'Residential Home'},
+                {value: 'Cabin', label: 'Cabin'},
+                {value: 'Villa', label: 'Villa'},
+                {value: 'Farm Stay', label: 'Farm Stay'},
+                {value: 'Mansion', label: 'Mansion'}
+            ],
+            'Secondary Unit':[
+                {value: 'Guesthouse', label: 'Guesthouse'},
+                {value: 'Guest Suite', label: 'Guest Suite'},
+                {value: 'Farm Stay', label: 'Farm Stay'}
+            ],
+            'Unique Space': [
+                {value: 'Barn', label: 'Barn'},
+                {value: 'Boat', label: 'Mansion'},
+                {value: 'Tree House', label: 'Tree House'},
+                {value: 'Castle', label: 'Castle'},
+                {value: 'Pension', label: 'Pension'},
+                {value: 'Camper/RV', label: 'Camper/RV'}
+            ],
+            "Hotel/Motel": [
+                {value: 'Hotel', label: 'Hotel'},
+                {value: 'Resort', label: 'Resort'},
+                {value: 'Aparthotel', label: 'Aparthotel'},
+                {value: 'Serviced Apartment', label: 'Serviced Apartment'},
+                {value: 'Boutique hotel', label: 'Boutique hotel'}
+            ]
+        }
+        
+        const privacyTypeOpts = [
+            {value: 'An entire place', label: 'An entire place'},
+            {value: 'A private room', label: 'A private room'},
+            {value: 'A shared room', label: 'A shared room'},
+        ]
+        console.log(this.state);
         return (
             <div className='listing-form-container'>
                 {this.state.completed ? <FormCompleted formType={this.props.formType}/> : null}
@@ -87,28 +137,11 @@ class ListingForm extends React.Component{
                 <div className='form-side-container'>
                     <form onSubmit={this.handleSubmit} className='listing-form'>
                             <div>Property Type Group: </div>
-                            {/* <input type="text"
-                                value={this.state.propertyTypeGroup}
-                                onChange={this.update('propertyTypeGroup')}
-                            /> */}
-                            <select defaultValue='--Select One--' onChange={this.update('propertyTypeGroup')}>
-                                {/* <option value='' disabled selected>--Select One--</option> */}
-                                <option value='Apartment'>Apartment</option>
-                                <option value='House'>House</option>
-                                <option value='Secondary Unit'>Secondary Unit</option>
-                                <option value='Unique Space'>Unique Space</option>
-                                <option value='Hotel/Motel'>Hotel/Motel</option>
-                            </select>
+                            <Select options={propTypeGroupOpts} defaultValue={'--Select One--'} onChange={(e)=> this.setState({propertyTypeGroup: e.value})}/>
                             <div>Property Type: </div>
-                            <input type="text"
-                                value={this.state.propertyType}
-                                onChange={this.update('propertyType')}
-                            />
+                            <Select options={propTypeOpts[this.state.propertyTypeGroup]} defaultValue={'--Select One--'} onChange={(e)=> this.setState({propertyType: e.value})}/>
                             <div>Privacy Type: </div>
-                            <input type="text"
-                                value={this.state.privacyType}
-                                onChange={this.update('privacyType')}
-                            />
+                            <Select options={privacyTypeOpts} defaultValue={'--Select One--'} onChange={(e)=> this.setState({privacyType: e.value})}/>
                             <div>Location: </div>
                             <input type="text"
                                 value={this.state.location}
