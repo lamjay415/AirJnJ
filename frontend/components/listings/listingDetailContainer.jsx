@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListing } from '../../actions/listing_actions';
 import { fetchUser } from '../../actions/user_actions'
-import SecondaryHeader from '../SecondaryHeader';
+// import SecondaryHeader from '../SecondaryHeader';
+import Header from '../Header';
 import ReservationBoxContainer from '../reservation/reservationBoxContainer';
 import Modal from '../modal/modal';
 class ListingDetail extends React.Component{
@@ -31,7 +32,7 @@ class ListingDetail extends React.Component{
         const amenities = listing.amenities.split(',').join(' ·');
         return(
             <div>
-                <SecondaryHeader/>
+                <Header className='secondary-header-container'/>
                 <Modal/>
                 <div className='listing-page'>
                     <div className='listing-body'>

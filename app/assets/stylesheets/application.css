@@ -462,6 +462,7 @@ body {
 }
 
 .form-popup {
+  z-index: 20;
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -494,4 +495,8 @@ body {
 .demo-login-div:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.become-a-host:hover{
+  cursor: pointer;
 }

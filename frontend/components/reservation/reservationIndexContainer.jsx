@@ -4,7 +4,8 @@ import { fetchReservations } from '../../actions/reservation_actions'
 import { connect } from 'react-redux';
 import ReservationDetail from './reservationDetail';
 import { fetchListing } from '../../util/listing_api_util';
-import SecondaryHeader from '../SecondaryHeader'
+// import SecondaryHeader from '../SecondaryHeader'
+import Header from '../Header';
 
 class ReservationIndex extends React.Component{
 
@@ -35,7 +36,7 @@ class ReservationIndex extends React.Component{
         )
         return(
             <div className='rev-index-page'>
-                <SecondaryHeader/>
+                <Header className='secondary-header-container'/>
                 <div className='rev-index-container'>
                     <div className='rev-header'>Upcoming Trips</div>
                     {reservationsLists.length === 0 ? emptyPage : reservationsLists}

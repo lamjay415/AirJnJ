@@ -12,7 +12,7 @@ const Home = () => (
     <div>
         <Modal/>
         <div className='entry-container'>
-            <Header/>
+            <Header className='header-container'/>
             <SearchBarContainer/>
         </div>
         <HomeContent/>

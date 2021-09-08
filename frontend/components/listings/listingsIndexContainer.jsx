@@ -17,7 +17,8 @@ class ListingsIndex extends React.Component{
             return (
                 <div className='listings-container'>
                     <div className='no-listings-container'>
-                        <div className='no-listings-message'>Sorry! There are no listings in this area.</div>
+                        <div className='no-listings-message'>Sorry! There are no listings in this area.
+                        Try searching for a different city!</div>
                         <Link to='/'>Click Here to go back</Link>
                     </div>
                 </div>

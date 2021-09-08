@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { asArray } from '../reducers/selectors';
 import { fetchListings } from '../actions/listing_actions';
 import { selectOnLocation } from '../reducers/selectors';
-import SecondaryHeader from './SecondaryHeader';
+// import SecondaryHeader from './SecondaryHeader';
 
 class ListingsPage extends React.Component{
 
@@ -23,7 +23,7 @@ class ListingsPage extends React.Component{
         return(
             <div className='listings-page'>
                 <Modal/>
-                <SecondaryHeader/>
+                <Header className='secondary-header-container'/>
                 <div className='listings-page-body'>
                     <ListingsIndexContainer listings={this.props.listings}/>
                     <ListingsMap listings={this.props.listings_arr} location={this.props.location}/>
