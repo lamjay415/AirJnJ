@@ -7,8 +7,8 @@
 
 .listing-body {
   margin-top: 30px;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   width: 85vw;
   height:90vh;
   justify-content: center;

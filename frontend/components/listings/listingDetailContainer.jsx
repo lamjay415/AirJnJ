@@ -32,8 +32,8 @@ class ListingDetail extends React.Component{
         const amenities = listing.amenities.split(',').join(' ·');
         return(
             <div>
-                <Header className='secondary-header-container'/>
                 <Modal/>
+                <Header className='secondary-header-container'/>
                 <div className='listing-page'>
                     <div className='listing-body'>
                         <div className='listing-title'>{listing.title}</div>
