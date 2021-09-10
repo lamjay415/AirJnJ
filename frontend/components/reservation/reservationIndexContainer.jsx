@@ -3,6 +3,7 @@ import { selectMyReservations } from '../../reducers/selectors';
 import { fetchReservations } from '../../actions/reservation_actions'
 import { connect } from 'react-redux';
 import ReservationDetail from './reservationDetail';
+import { withRouter } from 'react-router';
 import { fetchListing } from '../../util/listing_api_util';
 // import SecondaryHeader from '../SecondaryHeader'
 import Header from '../Header';
@@ -31,7 +32,9 @@ class ReservationIndex extends React.Component{
 
         const emptyPage = (
             <div className='empty-trips-cont'>
-                :(
+                <div>When you’re ready to start planning your next trip, we’re here to help.</div>
+                <img src='https://i.gyazo.com/69abf6a8f8597dd9f853f2d02c3fd5d7.png' className='empty-trips-img'/>
+                <div className='explore-btn' onClick={()=>this.props.history.push('/')}>Explore Airjnj</div>
             </div>
         )
         return(
@@ -54,5 +57,5 @@ const mDTP = dispatch => ({
     fetchReservations: () => dispatch(fetchReservations()),
 });
 
-export default connect(mSTP, mDTP)(ReservationIndex);
+export default withRouter(connect(mSTP, mDTP)(ReservationIndex));
 
