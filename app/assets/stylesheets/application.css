@@ -385,20 +385,24 @@ body {
 /* BECOME A HOST PAGE */
 .listing-form-container {
   display: flex;
-  height: 100vh;
+  overflow-y: scroll;
 }
 
 .form-graphics {
   background-color: black;
   width: 50%;
   height: 100%;
-  position: inherit;
+  position: fixed;
 }
 
 .listing-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: absolute;
+  left: 65%;
+  top: 5%;
+  padding-bottom: 50px;
 }
 
 .form-side-container {
@@ -411,13 +415,11 @@ body {
   position: fixed;
   padding: 10px;
 }
-.graphics-text {
-  color: white;
-}
 
 .graphics-text {
   position: absolute;
-  left: 15%;
+  color: white;
+  left: 22.5%;
   top: 45%;
   font-size: 40px;
   width: 270px;
