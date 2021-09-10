@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import {createReservation, deleteReservation} from '../../actions/reservation_actions';
 import { withRouter } from 'react-router';
+import { openModal } from '../../actions/modal_actions';
 
 class ReservationBox extends React.Component{
 
@@ -32,9 +33,13 @@ class ReservationBox extends React.Component{
 
     handleSubmit(e){
         e.preventDefault();
-        const reservation = Object.assign({}, this.state);
-        reservation.total = this.getTotal(this.calculateDays(reservation.startDate, reservation.endDate), reservation.price);
-        this.props.createReservation(reservation).then(()=> this.props.history.push('/trips'));
+        if(this.props.currentUser){
+            const reservation = Object.assign({}, this.state);
+            reservation.total = this.getTotal(this.calculateDays(reservation.startDate, reservation.endDate), reservation.price);
+            this.props.createReservation(reservation).then(()=> this.props.history.push('/trips'));
+        }else{
+            this.props.openModal('login');
+        }
     }
 
     update(field) {
@@ -112,7 +117,8 @@ class ReservationBox extends React.Component{
 // })
 
 const mDTP = dispatch => ({
-    createReservation: reservation => dispatch(createReservation(reservation))
+    createReservation: reservation => dispatch(createReservation(reservation)),
+    openModal: modal => dispatch(openModal(modal))
 });
 
 export default withRouter(connect(null, mDTP)(ReservationBox));

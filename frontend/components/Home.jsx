@@ -16,7 +16,7 @@ const Home = () => (
             <SearchBarContainer/>
         </div>
         <HomeContent/>
-        {/* <Footer/> */}
+        <Footer/>
     </div>
 
 )

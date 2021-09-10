@@ -1,8 +1,60 @@
 .footer-container {
-  position: fixed;
+  margin-top: 100px;
+  border-top: 1px solid rgb(221, 221, 221);
+  display: flex;
+  justify-content: space-around;
+  position: inherit;
   left: 0;
   bottom: 0;
-  height: 10vh;
+  height: 13vh;
   width: 100%;
   background-color: whitesmoke;
+}
+
+.footer-content{
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-content > * {
+  color:darkslategrey;
+}
+
+.footer-about {
+  width: 65%;
+}
+
+.footer-links {
+  width: 10%;
+}
+
+.quicklinks >*{
+  padding-bottom: 10px;
+  font-weight: 300;
+}
+
+.quicklinks > *:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.footer-contact{
+  width: 20%;
+}
+
+.footer-email{
+  padding-top: 15px;
+  font-weight: 300;
+}
+
+.about-text {
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+.quicklinks {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
 }
