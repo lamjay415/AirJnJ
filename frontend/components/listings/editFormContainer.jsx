@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
-import ListingForm from './listingForm';
 import React from 'react';
+import { propTypeOpts, propTypeGroupOpts, privacyTypeOpts } from '../../util/dropdown_options_util';
+import Header from '../Header';
+import EditForm from './editForm';
 
 import { fetchListing, updateListing } from '../../actions/listing_actions'
 
@@ -24,11 +26,12 @@ class EditListingForm extends React.Component{
         const { listing, processForm, formType} = this.props;
         if(!listing) return null;
         return(
-            <ListingForm
-                listing={listing}
-                processForm={processForm}
-                formType={formType}    
-            />
+            <div className='listing-edit-page'>
+                <Header className='secondary-header-container'/>
+                <div className='listing-edit-body'>
+                    <EditForm listing={listing} processForm={processForm}/>
+                </div>
+            </div>
         )
     }
 
