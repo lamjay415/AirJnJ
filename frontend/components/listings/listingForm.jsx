@@ -51,7 +51,7 @@ class ListingForm extends React.Component{
 
     update(field) {
         return e => {
-            this.setState({[field]: e.currentTarget.value}, ()=>console.log(this.state));
+            this.setState({[field]: e.currentTarget.value});
         };
     }
 
