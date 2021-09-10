@@ -98,6 +98,7 @@ class ListingForm extends React.Component{
                             <input type="text"
                                 value={this.state.location}
                                 onChange={this.update('location')}
+                                placeholder='Enter full address here'
                             />
                             <div>Max Guests:  </div>
                             <input type="number"
@@ -123,6 +124,7 @@ class ListingForm extends React.Component{
                             <input type="text"
                                 value={this.state.amenities}
                                 onChange={this.update('amenities')}
+                                placeholder='ie. Wifi, free parking, TV'
                             />
                             <div>Price per day:  </div>
                             <input type="number"
@@ -138,6 +140,7 @@ class ListingForm extends React.Component{
                             <textarea
                                 value={this.state.description}
                                 onChange={this.update('description')}
+                                rows='8'
                             />
                             <div>
                             {this.state.previewPics.map((src,indx)=>{

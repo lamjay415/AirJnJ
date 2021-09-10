@@ -1,6 +1,8 @@
 import React from 'react';
 import Select from 'react-select';
+import { withRouter } from 'react-router';
 import { propTypeOpts, propTypeGroupOpts, privacyTypeOpts } from '../../util/dropdown_options_util';
+import FormCompleted from '../popup/formCompleted';
 
 
 class EditForm extends React.Component{
@@ -8,24 +10,26 @@ class EditForm extends React.Component{
     constructor(props){
         super(props);
         this.state = this.props.listing;
+        this.state.completed = false;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     
     handleSubmit(e){
         e.preventDefault();
         const listing = Object.assign({}, this.state);
-        this.props.processForm(listing);
+        this.props.processForm(listing).then(() => this.setState({completed:true}));
     }
 
     update(field) {
         return e => {
-            this.setState({[field]: e.currentTarget.value}, ()=>console.log(this.state));
+            this.setState({[field]: e.currentTarget.value});
         };
     }
 
     render(){
         return(
             <div className='listing-edit-content'>
+                {this.state.completed ? <FormCompleted formType={this.props.formType}/> : null}
                 <form onSubmit={this.handleSubmit} className='edit-form'>
                     <div className='form-category'>Photos 
                         <div className='form-photos'>
@@ -72,13 +76,13 @@ class EditForm extends React.Component{
                         </div>
                     </div>
                     <div className='form-category'>Property and rooms
-                        <div>Property Type Group: 
+                        <div>Property Type Group
                             <Select options={propTypeGroupOpts} defaultValue={{label:this.state.propertyTypeGroup, value:this.state.propertyTypeGroup}} onChange={(e)=> this.setState({propertyTypeGroup: e.value})}/>
                         </div>
-                        <div>Property Type: 
+                        <div>Property Type
                             <Select options={propTypeOpts[this.state.propertyTypeGroup]} defaultValue={{label:this.state.propertyType, value:this.state.propertyType}} onChange={(e)=> this.setState({propertyType: e.value})}/>
                         </div>
-                        <div>Privacy Type: 
+                        <div>Privacy Type
                             <Select options={privacyTypeOpts} defaultValue={{label:this.state.privacyType, value:this.state.privacyType}} onChange={(e)=> this.setState({privacyType: e.value})}/>
                         </div> 
                         <div className='form-num-field'>Bedrooms:  
@@ -115,4 +119,4 @@ class EditForm extends React.Component{
     }
 }
 
-export default EditForm;
+export default withRouter(EditForm);

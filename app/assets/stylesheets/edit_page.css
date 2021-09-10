@@ -25,27 +25,29 @@
   flex-direction: column;
   margin-top: 10px;
   padding-bottom: 10px;
-  font-weight: 300;
+  font-weight: 400;
   /* width: 0%; */
 }
 
 .form-photos{
     display:flex;
-    flex-direction: row;
-    /* flex-flow: row wrap ; */
+    flex-wrap: wrap;
     justify-content: space-between;
-    height: 150px;
+    height: 100px;
+    width: 100%;
 }
 
 .form-photos > img{
     padding: 0 0 0 0;
-    margin-right: 10px;
     border-radius: 10px;
     object-fit: cover;
+    height: 100%;
+    /* width: */
 }
 
 .form-category > * > *{
     margin-top: 10px;
+    font-weight: 300;
 }
 
 .form-num-field{
@@ -62,5 +64,10 @@
 }
 
 .edit-form > input {
-    margin-bottom: 150px;
+    margin: 50px 0 100px 0;
+}
+
+.listing-edit-content > .form-popup {
+    left: 12.5%;
+    width: 75%;
 }
