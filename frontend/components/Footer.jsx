@@ -14,9 +14,9 @@ const Footer = () => (
             <div className='footer-links'>
                 Quicklinks
                 <div className='quicklinks'>
-                    <div onClick="window.open('https://www.linkedin.com/in/jay-lam/','_blank')">LinkedIn</div>
-                    <div onClick="window.open('https://github.com/lamjay415','_blank')">Github</div>
-                    <div onClick="window.open('https://jay-lam.netlify.app/','_blank')">Portfolio</div>
+                    <div onClick={() => window.open('https://www.linkedin.com/in/jay-lam/','_blank')}>LinkedIn</div>
+                    <div onClick={() => window.open('https://github.com/lamjay415','_blank')}>Github</div>
+                    <div onClick={() => window.open('https://jay-lam.netlify.app/','_blank')}>Portfolio</div>
                 </div>
             </div>
             <div className='footer-contact'>
