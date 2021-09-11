@@ -6,7 +6,6 @@ class ListingsMap extends React.Component{
 
     constructor(props){
         super(props);
-        this.initMap = this.initMap.bind(this);
     }
 
     componentDidMount(){
