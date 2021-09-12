@@ -39,6 +39,7 @@
 .listing-photo:hover {
   transform: scale(1.02);
   transition: 1s;
+  cursor: pointer;
 }
 
 .listing-subtitle {
@@ -80,4 +81,12 @@
 
 .listing-amenities {
   font-weight: 300;
+}
+
+.modal-image {
+  width: 750px;
+  border-radius: 10px;
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 750px/2);
 }

@@ -347,7 +347,7 @@ body {
   right: 0;
   left: 0;
   /* background: rgba(0, 0, 0, 0.5); */
-  z-index: 10;
+  z-index: 20;
   animation-name: backgroundFade;
   animation-duration: 1s;
   animation-fill-mode: forwards;

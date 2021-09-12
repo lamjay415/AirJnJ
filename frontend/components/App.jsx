@@ -13,6 +13,7 @@ import Modal from './modal/modal';
 
 const App = () => (
     <div>
+        <Modal/>
         <Switch>
             <Route exact path='/' component={Home}/>
             <ProtectedRoute path='/become-a-host' component={CreateFormContainer}/>

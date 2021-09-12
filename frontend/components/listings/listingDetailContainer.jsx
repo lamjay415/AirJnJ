@@ -6,14 +6,24 @@ import { fetchUser } from '../../actions/user_actions'
 import Header from '../Header';
 import ReservationBoxContainer from '../reservation/reservationBoxContainer';
 import Modal from '../modal/modal';
+import { openModal } from '../../actions/modal_actions';
+import { openPhoto } from '../../actions/photo_actions';
 class ListingDetail extends React.Component{
 
     constructor(props){
         super(props);
+        this.openImage = this.openImage.bind(this);
     }
 
     componentDidMount(){
         this.props.fetchListing(this.props.match.params.id);
+    }
+
+    openImage(url){
+        return () => {
+            this.props.openPhoto(url);
+            this.props.openModal('openPhoto');
+        }
     }
 
     render(){
@@ -26,13 +36,12 @@ class ListingDetail extends React.Component{
         const currentUser = this.props.currentUser;
         const photos = listing.photoUrls.map((url,idx) => {
             return (
-                <img src={url} key={`pic${idx}`} className='listing-photo'/>
+                <img src={url} key={`pic${idx}`} className='listing-photo' onClick={this.openImage(url)}/>
             )
         });
         const amenities = listing.amenities.split(',').join(' ·');
         return(
             <div>
-                <Modal/>
                 <Header className='secondary-header-container'/>
                 <div className='listing-page'>
                     <div className='listing-body'>
@@ -71,7 +80,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => ({
     fetchListing: id => dispatch(fetchListing(id)),
-    fetchUser: id => dispatch(fetchUser(id))
+    fetchUser: id => dispatch(fetchUser(id)),
+    openModal: modal => dispatch(openModal(modal)),
+    openPhoto: photoUrl => dispatch(openPhoto(photoUrl))
 });
 
 export default connect(mSTP, mDTP)(ListingDetail);

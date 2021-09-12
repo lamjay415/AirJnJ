@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../sessionForm/loginFormContainer';
 import SignupFormContainer from '../sessionForm/signupFormContainer';
 import { closeModal } from '../../actions/modal_actions';
+import Image from '../listings/image';
 
 const Modal = ({modal, closeModal}) => {
     if(!modal){
@@ -15,6 +16,9 @@ const Modal = ({modal, closeModal}) => {
             break;
         case 'signup':
             component = <SignupFormContainer/>;
+            break;
+        case 'openPhoto':
+            component = <Image/>;
             break;
         default:
             return null;
