@@ -37,8 +37,8 @@
 }
 
 .listing-photo:hover {
-  transform: scale(1.02);
-  transition: 1s;
+  box-shadow: 0 0 10px darkslategray;
+  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -83,10 +83,28 @@
   font-weight: 300;
 }
 
-.modal-image {
+.modal-image-cont {
   width: 750px;
   border-radius: 10px;
   position: absolute;
   top: 25%;
   left: calc(50% - 750px/2);
+}
+
+.modal-image{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.close-image{
+  width:30px;
+  position: absolute;
+  z-index: 25;
+  right: 10px;
+  top: 10px;
+}
+
+.close-image:hover{
+  cursor: pointer;
+  transform: scale(1.05);
 }

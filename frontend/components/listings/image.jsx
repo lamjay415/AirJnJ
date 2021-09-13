@@ -2,8 +2,11 @@ import React from 'react';
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from 'react-redux';
 
-const Image = ({imageUrl}) => (
-    <img src={imageUrl} className='modal-image'/>
+const Image = ({imageUrl,closeModal}) => (
+    <div className='modal-image-cont'>
+        <img src="https://img.icons8.com/ios/50/000000/close-window.png" className='close-image' onClick={()=>closeModal()}/>
+        <img src={imageUrl} className='modal-image'/>
+    </div>
 );
 
 const mSTP = state => ({
