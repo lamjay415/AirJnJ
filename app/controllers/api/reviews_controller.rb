@@ -14,6 +14,11 @@ class Api::ReviewsController < ApplicationController
         render :index
     end
 
+    def show
+        @review = Review.find(params[:id])
+        render :show
+    end
+
     private 
     def review_params
         params.require(:review).permit(:user_id, :listing_id, :txt_review)
