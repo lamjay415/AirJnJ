@@ -22,6 +22,11 @@ export const selectMyReservations = state => {
 
 };
 
+export const selectMyReviews = (state,id) => {
+    const allReviews = Object.values(state.entities.reviews);
+    return allReviews.filter(review => review.listingId === id)
+}
+
 export const selectOnLocation = (state,location) => {
     const allListings = Object.values(state.entities.listings);
     return allListings.filter(listing => {

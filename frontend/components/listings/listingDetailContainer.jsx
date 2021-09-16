@@ -2,10 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListing } from '../../actions/listing_actions';
 import { fetchUser } from '../../actions/user_actions'
-// import SecondaryHeader from '../SecondaryHeader';
 import Header from '../Header';
 import ReservationBoxContainer from '../reservation/reservationBoxContainer';
-import Modal from '../modal/modal';
+import ReviewsContainer from '../reviews/reviewsContainer';
 import { openModal } from '../../actions/modal_actions';
 import { openPhoto } from '../../actions/photo_actions';
 class ListingDetail extends React.Component{
@@ -60,7 +59,8 @@ class ListingDetail extends React.Component{
                             <ReservationBoxContainer listing={listing} 
                             currentUser={currentUser}
                             />
-                        </div>  
+                        </div>
+                        <ReviewsContainer listing={listing.id} currentUser={currentUser}/>  
                     </div>
                 </div>
             </div>

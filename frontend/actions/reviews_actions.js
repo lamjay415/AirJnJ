@@ -18,7 +18,12 @@ export const fetchReviews = () => dispatch => (
         .then(reviews => dispatch(receiveAllReviews(reviews)))
 );
 
-export const fetchReview = () => dispatch => (
-    ReviewApi.fetchReview()
+export const fetchReview = reviewId => dispatch => (
+    ReviewApi.fetchReview(reviewId)
+        .then(review => dispatch(receiveReview(review)))
+);
+
+export const createReview = review => dispatch => (
+    ReviewApi.createReview(review)
         .then(review => dispatch(receiveReview(review)))
 );
