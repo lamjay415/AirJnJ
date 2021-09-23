@@ -7,6 +7,7 @@ import ReservationBoxContainer from '../reservation/reservationBoxContainer';
 import ReviewsContainer from '../reviews/reviewsContainer';
 import { openModal } from '../../actions/modal_actions';
 import { openPhoto } from '../../actions/photo_actions';
+import Footer from '../Footer';
 class ListingDetail extends React.Component{
 
     constructor(props){
@@ -62,6 +63,7 @@ class ListingDetail extends React.Component{
                         </div>
                         <ReviewsContainer listing={listing.id} currentUser={currentUser}/>  
                     </div>
+                    <Footer/>
                 </div>
             </div>
         )

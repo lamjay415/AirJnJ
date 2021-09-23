@@ -38,10 +38,14 @@ class ReviewsContainer extends React.Component {
                     {listingReviews}
                 </div>
                 {!this.props.currentUser ? null :
+                <div className='write-review'>
+                    <div className='reviews-header'>Write a public review</div>
+                    <div className='write-review-subheader'>Tell the next guests what you loved and anything else they should know about this place</div>
                     <form onSubmit={this.handleSubmit} className='review-form'>
-                        <textarea onChange={(e) => this.setState({txtReview:e.currentTarget.value})}/>
+                        <textarea className='review-text' onChange={(e) => this.setState({txtReview:e.currentTarget.value})}/>
                         <input type='submit' value='Add Review' className='form-button'/>
-                    </form>  
+                    </form>
+                </div>  
                 }
             </div>
         )
