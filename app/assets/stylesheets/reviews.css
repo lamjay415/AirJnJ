@@ -1,0 +1,38 @@
+.reviews-component{
+    border-top: 1px solid lightgray;
+    padding-top: 50px;
+    padding-bottom: 75px;
+}
+
+.reviews-header{
+    font-size: larger;
+    font-family: "Montserrat";
+    font-weight: 600;
+}
+
+.review-form{
+    display:flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.reviews-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.review-user-container{
+    padding: 10px 0;
+}
+
+.review-container{
+    width: 47.5%;
+    margin-right: 2.5%;
+    padding: 10px 0;
+}
+
+.review-content{
+    font-weight: 400;
+    
+}

@@ -32,9 +32,9 @@ class ReviewsContainer extends React.Component {
             )
         })
         return(
-            <div className='reviews-container'>
-                <div>Reviews</div>
-                <div>
+            <div className='reviews-component'>
+                <div className='reviews-header'>Reviews</div>
+                <div className='reviews-container'>
                     {listingReviews}
                 </div>
                 {!this.props.currentUser ? null :
