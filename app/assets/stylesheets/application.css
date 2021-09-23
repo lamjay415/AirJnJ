@@ -326,6 +326,10 @@ body {
   background-repeat: no-repeat; */
 }
 
+.session-erros{
+  width: 235px;
+}
+
 .session-errors > * {
   font-weight: 300;
   color: red;

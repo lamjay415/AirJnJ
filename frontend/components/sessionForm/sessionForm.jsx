@@ -58,7 +58,7 @@ class SessionForm extends React.Component{
             form = (
                     <form onSubmit={this.handleSubmit} className='form-elements' id='signup-from'>
                         <div>Email:</div>
-                        <input type="text"
+                        <input type="email"
                             value={this.state.email}
                             onChange={this.update('email')}
                         />
@@ -78,7 +78,7 @@ class SessionForm extends React.Component{
                             onChange={this.update('birthdate')}
                         />
                         <div>Password: </div>
-                        <input type="text"
+                        <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                         />
