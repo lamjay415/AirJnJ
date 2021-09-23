@@ -1,8 +1,7 @@
 import React from 'react';
-import { fetchReviews } from '../../actions/reviews_actions';
+import { fetchReviews, createReview } from '../../actions/reviews_actions';
 import { selectMyReviews } from '../../reducers/selectors';
 import { connect } from 'react-redux';
-import { createReview } from '../../util/review_api_util';
 import Review from './Review';
 
 class ReviewsContainer extends React.Component {

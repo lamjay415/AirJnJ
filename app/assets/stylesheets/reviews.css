@@ -39,6 +39,7 @@
     padding: 10px;
     font-weight: 400;
     height: 100px;
+    font-size: 15px;
 }
 
 .review-user-pic{
@@ -51,8 +52,9 @@
 }
 
 .review-date {
-    font-weight: 400;
+    font-weight: 300;
     margin-top: 10px;
+    font-size: 14px;
 }
 .review-user-container{
     display:flex;
@@ -66,5 +68,7 @@
 }
 
 .review-content{
-    font-weight: 400;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.5;
 }

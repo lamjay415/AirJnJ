@@ -14,7 +14,7 @@ const Review = ({review}) => (
 );
 
 const getDate = date =>{
-    let d = new Date(date.slice(0,10));
+    let d = new Date(date);
     return {month:new Intl.DateTimeFormat('en-US', {month:'long'}).format(d), year:d.getFullYear()};
 }
 
