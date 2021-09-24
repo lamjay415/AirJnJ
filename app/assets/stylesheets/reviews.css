@@ -72,3 +72,8 @@
     font-size: 14px;
     line-height: 1.5;
 }
+
+.empty-reviews{
+    margin-top: 15px;
+    font-weight: 400;
+}

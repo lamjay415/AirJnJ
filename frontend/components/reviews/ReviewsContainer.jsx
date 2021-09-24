@@ -34,7 +34,11 @@ class ReviewsContainer extends React.Component {
             <div className='reviews-component'>
                 <div className='reviews-header'>Reviews</div>
                 <div className='reviews-container'>
-                    {listingReviews}
+                    {listingReviews.length !== 0 ? listingReviews : 
+                        <div className='empty-reviews'>
+                            There are no reviews for this place yet, you can be the first one!
+                        </div>
+                    }
                 </div>
                 {!this.props.currentUser ? null :
                 <div className='write-review'>
