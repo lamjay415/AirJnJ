@@ -99,6 +99,7 @@ class ListingForm extends React.Component{
                                 value={this.state.location}
                                 onChange={this.update('location')}
                                 placeholder='Enter full address here'
+                                required
                             />
                             <div>Max Guests:  </div>
                             <input type="number"
@@ -125,24 +126,29 @@ class ListingForm extends React.Component{
                                 value={this.state.amenities}
                                 onChange={this.update('amenities')}
                                 placeholder='ie. Wifi, free parking, TV'
+                                required
                             />
                             <div>Price per day:  </div>
                             <input type="number"
                                 value={this.state.price > 0 ? this.state.price : ''}
                                 onChange={this.update('price')}
+                                required
                             />
                             <div>Title:  </div>
                             <input type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
+                                required
                             />
                             <div>Description  </div>
                             <textarea
                                 value={this.state.description}
                                 onChange={this.update('description')}
                                 rows='8'
+                                required
                             />
                             <div>
+                            <div>Upload photos</div>
                             {this.state.previewPics.map((src,indx)=>{
                                 return <img src={src} key={`img${indx}`} height='75'/>
                             })}
