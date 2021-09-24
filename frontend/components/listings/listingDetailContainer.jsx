@@ -4,7 +4,7 @@ import { fetchListing } from '../../actions/listing_actions';
 import { fetchUser } from '../../actions/user_actions'
 import Header from '../Header';
 import ReservationBoxContainer from '../reservation/reservationBoxContainer';
-import ReviewsContainer from '../reviews/reviewsContainer';
+import ReviewsContainer from '../reviews/ReviewsContainer';
 import { openModal } from '../../actions/modal_actions';
 import { openPhoto } from '../../actions/photo_actions';
 import Footer from '../Footer';
