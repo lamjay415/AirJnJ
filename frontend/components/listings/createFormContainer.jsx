@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import ListingForm from './listingForm';
 
-import { createListing } from '../../actions/listing_actions'
+import { clearErrors, createListing } from '../../actions/listing_actions'
 
 const mSTP = (state) => ({
     listing: {
@@ -20,11 +20,13 @@ const mSTP = (state) => ({
         description: '',
         photos: []
     },
-    formType: 'Create Listing'
+    formType: 'Create Listing',
+    errors: state.errors.form
 });
 
 const mDTP = dispatch => ({
-    processForm: listing => dispatch(createListing(listing))
+    processForm: listing => dispatch(createListing(listing)),
+    clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mSTP, mDTP)(ListingForm);

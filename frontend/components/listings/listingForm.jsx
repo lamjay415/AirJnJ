@@ -78,6 +78,22 @@ class ListingForm extends React.Component{
         this.setState({previewPics: previews});
     }
 
+    showErrors(){
+        let {errors} = this.props
+        if(typeof errors === 'undefined'){
+            return null;
+        }
+        return(
+            <div className='form-errors'>
+              {errors.map((error, i) => (
+                <div key={i}>
+                  {error}
+                </div>
+              ))}
+            </div>
+          );
+    }
+
     render(){
         return (
             <div className='listing-form-container'>
@@ -87,6 +103,7 @@ class ListingForm extends React.Component{
                     <div className='graphics-text'>Hosting makes Airjnj, Airjnj</div>
                 </div>
                 <div className='form-side-container'>
+                    {this.showErrors()}
                     <form onSubmit={this.handleSubmit} className='listing-form'>
                             <div>Property Type Group: </div>
                             <Select options={propTypeGroupOpts} defaultValue={'--Select One--'} onChange={(e)=> this.setState({propertyTypeGroup: e.value})}/>
@@ -99,6 +116,7 @@ class ListingForm extends React.Component{
                                 value={this.state.location}
                                 onChange={this.update('location')}
                                 placeholder='Enter full address here'
+                                required
                             />
                             <div>Max Guests:  </div>
                             <input type="number"
@@ -125,23 +143,28 @@ class ListingForm extends React.Component{
                                 value={this.state.amenities}
                                 onChange={this.update('amenities')}
                                 placeholder='ie. Wifi, free parking, TV'
+                                required
                             />
                             <div>Price per day:  </div>
                             <input type="number"
                                 value={this.state.price > 0 ? this.state.price : ''}
                                 onChange={this.update('price')}
+                                required
                             />
                             <div>Title:  </div>
                             <input type="text"
                                 value={this.state.title}
                                 onChange={this.update('title')}
+                                required
                             />
                             <div>Description  </div>
                             <textarea
                                 value={this.state.description}
                                 onChange={this.update('description')}
                                 rows='8'
+                                required
                             />
+                            <div>Upload Photos </div>
                             <div>
                             {this.state.previewPics.map((src,indx)=>{
                                 return <img src={src} key={`img${indx}`} height='75'/>

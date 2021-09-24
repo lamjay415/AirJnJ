@@ -392,6 +392,10 @@ body {
   overflow-y: scroll;
 }
 
+.css-2b097c-container{
+  width: 240px;
+}
+
 .form-graphics {
   background-color: black;
   width: 50%;
