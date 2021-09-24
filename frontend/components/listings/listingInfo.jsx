@@ -40,7 +40,7 @@ class ListingInfo extends React.Component{
                         </div>
                     </div>
                     <div className='listing-bot'>
-                        <div className='listing-price'>${listing.price} <span>/ night</span></div>
+                        <div className='listing-price'>${listing.price} <span className='listing-price-span'>/ night</span></div>
                     </div>
                 </div>
             </div>
